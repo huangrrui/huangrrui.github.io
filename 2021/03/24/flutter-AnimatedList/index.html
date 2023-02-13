@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com.cn","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="http://example.com.cn/2021/03/24/flutter-AnimatedList/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"http://example.com.cn/2021/03/24/flutter-AnimatedList/","path":"2021/03/24/flutter-AnimatedList/","title":"flutter AnimatedList"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>flutter AnimatedList | 黄瑞的博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">黄瑞的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BA-GlobalKey"><span class="nav-number">1.</span> <span class="nav-text">1、创建 GlobalKey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%88%9B%E5%BB%BA-Cell-Builder-%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">2、创建 Cell Builder 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E6%B7%BB%E5%8A%A0-add-%E4%B8%8E-remove-%E6%96%B9%E6%B3%95%E7%94%A8%E6%9D%A5%E5%A2%9E%E5%88%A0-Cell"><span class="nav-number">3.</span> <span class="nav-text">3、添加 _add 与 _remove 方法用来增删 Cell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%88%9B%E5%BB%BA-AnimatedList-%E5%88%97%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">4、创建 AnimatedList 列表</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黄瑞"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">黄瑞</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2021/03/24/flutter-AnimatedList/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="黄瑞">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="flutter AnimatedList | 黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          flutter AnimatedList
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-24 21:53:07 / Modified: 21:53:00" itemprop="dateCreated datePublished" datetime="2021-03-24T21:53:07+08:00">2021-03-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>今天学习了 AnimatedList 的使用方法，通过它可以为 添加和移除 list cell 两个动作添加动画，具体使用方法如下</p>
+<h3 id="1、创建-GlobalKey"><a href="#1、创建-GlobalKey" class="headerlink" title="1、创建 GlobalKey"></a>1、创建 GlobalKey</h3><p>创建一个 GlobalKey，用来获取 AnimatedListState 对象</p>
+<pre><code class="dart">GlobalKey&lt;AnimatedListState&gt; key = GlobalKey&lt;AnimatedListState&gt;();
+</code></pre>
+<h3 id="2、创建-Cell-Builder-方法"><a href="#2、创建-Cell-Builder-方法" class="headerlink" title="2、创建 Cell Builder 方法"></a>2、创建 Cell Builder 方法</h3><p>创建一个 ListCell 的 builder 方法，它需要接收一个 animation 参数用来播放动画</p>
+<pre><code class="dart">Widget _buildItem(BuildContext context, int index, Animation&lt;double&gt; animation) &#123;
+  return ScaleTransition(
+    scale: animation,
+    child: Container(
+      decoration: BoxDecoration(
+        color: Colors.lightGreen,
+        border: Border.all(color: Colors.red),
+      ),
+      height: 44,
+      margin: EdgeInsets.all(8),
+      child: Center(
+        child: Text(&#39;$index&#39;),
+      ),
+    ),
+  );
+&#125;
+</code></pre>
+<h3 id="3、添加-add-与-remove-方法用来增删-Cell"><a href="#3、添加-add-与-remove-方法用来增删-Cell" class="headerlink" title="3、添加 _add 与 _remove 方法用来增删 Cell"></a>3、添加 _add 与 _remove 方法用来增删 Cell</h3><p>接着，你需要两个按钮，一个用来 add cell，一个用来 delete cell，他们的点击方法分别是，其中 count 是列表中 cell 的数量。</p>
+<pre><code class="dart">_add() &#123;
+  key.currentState.insertItem(count);
+  count++;
+&#125;
+
+_remove() &#123;
+  key.currentState.removeItem(count - 1, (_, __) =&gt; _buildItem(_, count, __));
+  count--;
+&#125;
+</code></pre>
+<h3 id="4、创建-AnimatedList-列表"><a href="#4、创建-AnimatedList-列表" class="headerlink" title="4、创建 AnimatedList 列表"></a>4、创建 AnimatedList 列表</h3><p>最后只需要创建一个 AnimatedList 即可</p>
+<pre><code class="dart">AnimatedList(
+  key: key,
+  itemBuilder: _buildItem,
+)
+</code></pre>
+<p>关键点，removeItem 方法执行后，指定 index 处的 cell widget 会立刻移除。</p>
+<p>为了显示动画，所以提供了一个 builder 方法用来创建一个新的 Widget 用来播放移除动画，该方法提供了一个 animation 参数，它是从 1 -&gt; 0 变化的，与 itemBuilder 中提供的相反。</p>
+<p>所以只需要提供相同的构造方法，即可创建与显示动画相反的消失动画。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/08/flutter-2-0%E6%96%B0%E7%89%B9%E6%80%A7/" rel="prev" title="flutter 2.0新特性">
+                  <i class="fa fa-chevron-left"></i> flutter 2.0新特性
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/04/07/flutter-Draggable-%E5%92%8C-DragTarget-%E5%92%8C-IntrinsicHeight/" rel="next" title="flutter Draggable 和 DragTarget 和 IntrinsicHeight">
+                  flutter Draggable 和 DragTarget 和 IntrinsicHeight <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄瑞</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
