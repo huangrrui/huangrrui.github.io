@@ -133,6 +133,18 @@ $ /usr/bin/curl -f -L -o /var/folders/sw/lnv_fnsd3jn39d99prhj8hsw0000gn/T/d
 ]]></content>
   </entry>
   <entry>
+    <title>GetX多语言使用方法</title>
+    <url>/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>又到了分享时刻，今天看了下 GetX，发现了一个应用内切换语言的功能，不需要重启 App 即可完成语言的切换，而且配置简单，只需要几步即可完成</p>
+<p>1、创建一个 Translations 类来存放你的多语言文案，例如<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/1.jpg">￼</p>
+<p>2、修改 GetMaterialApp 的相应参数<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/2.jpg"></p>
+<p>其中 Message 是存放多语言文案的类<br>locale 指定当前 App 的语言<br>fallbackLocale 指定当找不到对应语言的文案时，该使用哪种语言作为默认多语言文案</p>
+<p>3、使 App 中的文案随着语言变化<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/3.jpg"><br> <br>对，只需要在 String 类对象后面加上 “.tr“ 即可，非常方便。</p>
+<p>4、最后一步，切换多语言<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/4.jpg"><br> <br>即可完成多语言的切换</p>
+<p>最终效果如下<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/5.gif"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>HTTP 范围请求与 HTTP 条件请求详解</title>
     <url>/2023/01/06/HTTP-%E8%8C%83%E5%9B%B4%E8%AF%B7%E6%B1%82%E4%B8%8E-HTTP-%E6%9D%A1%E4%BB%B6%E8%AF%B7%E6%B1%82%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[<h1 id="HTTP-范围请求"><a href="#HTTP-范围请求" class="headerlink" title="HTTP 范围请求"></a>HTTP 范围请求</h1><p>HTTP 协议范围请求允许服务器只发送 HTTP 消息的一部分到客户端。范围请求在传送大的媒体文件，需要文件下载的断点续传功能时非常有用。</p>
@@ -377,18 +389,6 @@ Accept-Ranges: bytes
 ]]></content>
   </entry>
   <entry>
-    <title>GetX多语言使用方法</title>
-    <url>/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>又到了分享时刻，今天看了下 GetX，发现了一个应用内切换语言的功能，不需要重启 App 即可完成语言的切换，而且配置简单，只需要几步即可完成</p>
-<p>1、创建一个 Translations 类来存放你的多语言文案，例如<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/1.jpg">￼</p>
-<p>2、修改 GetMaterialApp 的相应参数<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/2.jpg"></p>
-<p>其中 Message 是存放多语言文案的类<br>locale 指定当前 App 的语言<br>fallbackLocale 指定当找不到对应语言的文案时，该使用哪种语言作为默认多语言文案</p>
-<p>3、使 App 中的文案随着语言变化<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/3.jpg"><br> <br>对，只需要在 String 类对象后面加上 “.tr“ 即可，非常方便。</p>
-<p>4、最后一步，切换多语言<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/4.jpg"><br> <br>即可完成多语言的切换</p>
-<p>最终效果如下<br><img src="/2021/10/22/GetX%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/5.gif"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>IndirectCommandBuffer</title>
     <url>/2022/09/19/IndirectCommandBuffer/</url>
     <content><![CDATA[<p>今天学习了 IndirectCommandBuffer（ICB），它的功能就是将 GPU 相关的执行和输入数据进行打包后复用，可以节省占比比较高的分配、回收，指令编译等时间。</p>
@@ -426,6 +426,61 @@ extension MapKitVC: MKMapViewDelegate &#123;
         let render = MKTileOverlayRenderer(overlay: overlay)
         return render
     &#125;
+&#125;
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>Metal 三角形绘制</title>
+    <url>/2022/07/19/Metal-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%BB%98%E5%88%B6/</url>
+    <content><![CDATA[<p>今天按照自己的想法吧三角形的绘制重新改了下，Metal 传递顶点数据方便太多（也可能是 OpenGL 学艺不精？），可以直接定义一个包含了位置信息与颜色信息的结构体，将整个结构体传入就可以了，而且 Metal 的 shader 语法是 C++ 的一个变体，里面很多东西都是相通的。</p>
+<p>不同于 OpenGL 中的 vertex shade，我们通过在 shader 中给 glPosition 赋值来告诉 GPU 顶点数据，Metal 还可以通过 [[position]] 修饰符来告诉 GPU 顶点数据。</p>
+<p>我目前所学到的，有两种方法来设置顶点信息，一种是直接返回顶点信息，例如</p>
+<pre><code class="c++">vertex vector_float4 vertexShader(
+                                  uint vertexID [[vertex_id]],
+                                  device const vector_float2* vertices [[buffer(0)]],
+                                  device const vector_float2* viewport [[buffer(1)]]
+                                  )
+&#123;
+    vector_float4 out = vector_float4(0, 0, 0, 1);
+    vector_float2 viewportSize = vector_float2(*viewport);
+
+    out.position.xy = vertices[vertexID].xy / (viewportSize / 2);
+    return out;
+&#125;
+</code></pre>
+<p>但是这样会有一个问题，fragment 中的颜色信息没办法传进去，虽然可以使用 commandEncoder.setFragmanetBuffer 方法来给 fragment 函数传入相关参数，但是看了下 MSL（Metal Shading Language） 的文档，没有一个类似于 [[vertex_id]] 的修饰符来为每一个顶点生成一个索引，没有办法确定我该用数据中的哪一个元素作为定点到的颜色值。(可能是还没学到，毕竟纹理部分还没学到)</p>
+<p>另一种方式是使用结构体，非常方便！</p>
+<pre><code class="c++">vertex RasterizeData vertexShader(
+                                  uint vertexID [[vertex_id]],
+                                  device const vector_float2* vertices [[buffer(0)]],
+                                  device const vector_float3* fragments [[buffer(1)]],
+                                  device const vector_float2* viewport [[buffer(2)]],
+                                  device const VertexData* vertexDatas [[buffer(3)]]
+                                  )
+&#123;
+    RasterizeData out;
+    
+    vector_float2 viewportSize = vector_float2(*viewport);
+    
+    out.position = vector_float4(0.0, 0.0, 0.0, 1.0);
+    out.position.xy = vertexDatas[vertexID].position / (viewportSize / 2);
+    
+    out.color = vector_float4(0.0, 0.0, 0.0, 1.0);
+    out.color.xyz = vertexDatas[vertexID].color;
+    
+    return out;
+&#125;
+
+struct RasterizeData&#123;
+    float4 position [[position]]; 
+    float4 color;
+&#125;;
+</code></pre>
+<p>通过定义这样一个结构体，并加上 [[position]] 修饰符来告诉 shader，这个属性里面的信息就是顶点数据，然后再 fragment shader 里，用 [[stage_in]] 修饰符来告诉 fragment shader，这个参数是 vertexShader 传进来的，来拿到颜色信息。</p>
+<pre><code class="c++">fragment vector_float4 fragmentShader(RasterizeData in [[stage_in]])
+&#123;
+    return in.color;
 &#125;
 </code></pre>
 ]]></content>
@@ -540,61 +595,6 @@ func mtkViewRender() -&gt; Void &#123;
 </code></pre>
 <p>将保存了灰度图数据的纹理渲染到屏幕上，具体可以参考<a href="https://developer.apple.com/documentation/metal/using_a_render_pipeline_to_render_primitives">苹果官方文档</a>，讲解的比较详细</p>
 <p>通过离屏渲染，可以现将图片进行处理，假如遮罩等等，由于 fragment 支持传入多个纹理，所以可以处理多个图层的情况，渲染的结果既可以通过 MTKView 等方式直接显示在屏幕上，也可以保存为图片文件，或者是其他的用途，可以进一步的挖掘一下。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Metal 三角形绘制</title>
-    <url>/2022/07/19/Metal-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%BB%98%E5%88%B6/</url>
-    <content><![CDATA[<p>今天按照自己的想法吧三角形的绘制重新改了下，Metal 传递顶点数据方便太多（也可能是 OpenGL 学艺不精？），可以直接定义一个包含了位置信息与颜色信息的结构体，将整个结构体传入就可以了，而且 Metal 的 shader 语法是 C++ 的一个变体，里面很多东西都是相通的。</p>
-<p>不同于 OpenGL 中的 vertex shade，我们通过在 shader 中给 glPosition 赋值来告诉 GPU 顶点数据，Metal 还可以通过 [[position]] 修饰符来告诉 GPU 顶点数据。</p>
-<p>我目前所学到的，有两种方法来设置顶点信息，一种是直接返回顶点信息，例如</p>
-<pre><code class="c++">vertex vector_float4 vertexShader(
-                                  uint vertexID [[vertex_id]],
-                                  device const vector_float2* vertices [[buffer(0)]],
-                                  device const vector_float2* viewport [[buffer(1)]]
-                                  )
-&#123;
-    vector_float4 out = vector_float4(0, 0, 0, 1);
-    vector_float2 viewportSize = vector_float2(*viewport);
-
-    out.position.xy = vertices[vertexID].xy / (viewportSize / 2);
-    return out;
-&#125;
-</code></pre>
-<p>但是这样会有一个问题，fragment 中的颜色信息没办法传进去，虽然可以使用 commandEncoder.setFragmanetBuffer 方法来给 fragment 函数传入相关参数，但是看了下 MSL（Metal Shading Language） 的文档，没有一个类似于 [[vertex_id]] 的修饰符来为每一个顶点生成一个索引，没有办法确定我该用数据中的哪一个元素作为定点到的颜色值。(可能是还没学到，毕竟纹理部分还没学到)</p>
-<p>另一种方式是使用结构体，非常方便！</p>
-<pre><code class="c++">vertex RasterizeData vertexShader(
-                                  uint vertexID [[vertex_id]],
-                                  device const vector_float2* vertices [[buffer(0)]],
-                                  device const vector_float3* fragments [[buffer(1)]],
-                                  device const vector_float2* viewport [[buffer(2)]],
-                                  device const VertexData* vertexDatas [[buffer(3)]]
-                                  )
-&#123;
-    RasterizeData out;
-    
-    vector_float2 viewportSize = vector_float2(*viewport);
-    
-    out.position = vector_float4(0.0, 0.0, 0.0, 1.0);
-    out.position.xy = vertexDatas[vertexID].position / (viewportSize / 2);
-    
-    out.color = vector_float4(0.0, 0.0, 0.0, 1.0);
-    out.color.xyz = vertexDatas[vertexID].color;
-    
-    return out;
-&#125;
-
-struct RasterizeData&#123;
-    float4 position [[position]]; 
-    float4 color;
-&#125;;
-</code></pre>
-<p>通过定义这样一个结构体，并加上 [[position]] 修饰符来告诉 shader，这个属性里面的信息就是顶点数据，然后再 fragment shader 里，用 [[stage_in]] 修饰符来告诉 fragment shader，这个参数是 vertexShader 传进来的，来拿到颜色信息。</p>
-<pre><code class="c++">fragment vector_float4 fragmentShader(RasterizeData in [[stage_in]])
-&#123;
-    return in.color;
-&#125;
-</code></pre>
 ]]></content>
   </entry>
   <entry>
@@ -3316,6 +3316,23 @@ self.present(vc2, animated: true, completion: nil)
 ]]></content>
   </entry>
   <entry>
+    <title>inputAccessoryView 中需要 UITextField 时的处理方式</title>
+    <url>/2019/06/06/inputAccessoryView-%E4%B8%AD%E9%9C%80%E8%A6%81-UITextField-%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>我有一个 UITextField 控件，在激活时，需要在弹出键盘的上方加一个 UITextField 和确认按钮，供用户输入与确认。</p>
+<h2 id="初始方案"><a href="#初始方案" class="headerlink" title="初始方案"></a>初始方案</h2><p>实现原 UITextField 代理方法 func textFieldDidBeginEditing(_ textField: UITextField)</p>
+<p>将 inputAccessoryView 中的 UITextField 设为第一响应者</p>
+<pre><code class="swift">class ViewController: UIViewController &#123;
+    let text_field = UITextField()
+    let intpu_view = UITextField()
+    text_field.inputAccessoryView = input_view
+&#125;
+</code></pre>
+<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>监听键盘弹出事件，等键盘弹出后，将 inputAccessoryView 中的 UITextField 设为第一响应者</p>
+<h2 id="方案三（建议）"><a href="#方案三（建议）" class="headerlink" title="方案三（建议）"></a>方案三（建议）</h2><p>伪装 inputAccessoryView，将原 UITextField 改为 UILabel，点击时将 inputAccessoryView 中的 UITextField 设为第一响应者，通过监听键盘弹出与收起通知，获取动画与键盘frame信息，使用动画将 UITextField 置于键盘上方，伪装成 inputAccessoryView。</p>
+<p>注意如果不将 inputAccessoryView 通过 addSubview 添加到屏幕上，则它无法成为第一响应者，无法弹出键盘</p>
+]]></content>
+  </entry>
+  <entry>
     <title>macOS OpenCV 环境配置</title>
     <url>/2022/06/02/macOS-OpenCV-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>macOS OpenCV 环境配置</p>
@@ -3334,23 +3351,6 @@ self.present(vc2, animated: true, completion: nil)
 </li>
 </ol>
 <p>至此，OpenCV 已经部署完毕，可以进行开发了，注意，需要使用 Swift 调 OC 调 C++ 的方法来使用 OpenCV </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>inputAccessoryView 中需要 UITextField 时的处理方式</title>
-    <url>/2019/06/06/inputAccessoryView-%E4%B8%AD%E9%9C%80%E8%A6%81-UITextField-%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>我有一个 UITextField 控件，在激活时，需要在弹出键盘的上方加一个 UITextField 和确认按钮，供用户输入与确认。</p>
-<h2 id="初始方案"><a href="#初始方案" class="headerlink" title="初始方案"></a>初始方案</h2><p>实现原 UITextField 代理方法 func textFieldDidBeginEditing(_ textField: UITextField)</p>
-<p>将 inputAccessoryView 中的 UITextField 设为第一响应者</p>
-<pre><code class="swift">class ViewController: UIViewController &#123;
-    let text_field = UITextField()
-    let intpu_view = UITextField()
-    text_field.inputAccessoryView = input_view
-&#125;
-</code></pre>
-<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>监听键盘弹出事件，等键盘弹出后，将 inputAccessoryView 中的 UITextField 设为第一响应者</p>
-<h2 id="方案三（建议）"><a href="#方案三（建议）" class="headerlink" title="方案三（建议）"></a>方案三（建议）</h2><p>伪装 inputAccessoryView，将原 UITextField 改为 UILabel，点击时将 inputAccessoryView 中的 UITextField 设为第一响应者，通过监听键盘弹出与收起通知，获取动画与键盘frame信息，使用动画将 UITextField 置于键盘上方，伪装成 inputAccessoryView。</p>
-<p>注意如果不将 inputAccessoryView 通过 addSubview 添加到屏幕上，则它无法成为第一响应者，无法弹出键盘</p>
 ]]></content>
   </entry>
   <entry>
@@ -3373,14 +3373,6 @@ Accept-Ranges: bytes
 ]]></content>
   </entry>
   <entry>
-    <title>人像自动居中</title>
-    <url>/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/</url>
-    <content><![CDATA[<p>通过 CIDetector 检测图片中存在的人像，通过获取到眼睛与鼻子的相对位置，眼距，眼睛的夹角，以及眼睛与嘴巴形成的三角形的重心，有了这些信息就可以通过计算，得到对应的 transform 将照片中的人像移动到屏幕的中心位置</p>
-<p>效果如下<br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/1.jpg"><br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/2.jpg"><br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/3.jpg"><br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/4.jpg"></p>
-<p>代码如下<br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/1.swift" alt="代码"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>上传优化&amp;任务加载优化</title>
     <url>/2022/02/22/%E4%B8%8A%E4%BC%A0%E4%BC%98%E5%8C%96-%E4%BB%BB%E5%8A%A1%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<p>对于上传及加载本身，移动端这边可以做的并不是很多，主要的策略还是空间换时间，这个和谷歌的 Chrome 浏览器有点相似，后者是用内存换取性能上的优势。</p>
@@ -3395,6 +3387,14 @@ Accept-Ranges: bytes
 </ol>
 <p>第二个问题稍微有点复杂，正常流程下，任务的素材上传成功后就可以清除了，但同时也需要考虑失败或者别的情况，例如用户删除了任务，用户取消上传后又重新对任务进行了编辑的情况。</p>
 <p>本次迭代主要是方案的确定，这样可以留出更多的时间让我们完善这个方案，尽可能的考虑多种情况，以及各个情况下的处理方式，这样写出来的程序就比较健壮，不容易出错。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>人像自动居中</title>
+    <url>/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/</url>
+    <content><![CDATA[<p>通过 CIDetector 检测图片中存在的人像，通过获取到眼睛与鼻子的相对位置，眼距，眼睛的夹角，以及眼睛与嘴巴形成的三角形的重心，有了这些信息就可以通过计算，得到对应的 transform 将照片中的人像移动到屏幕的中心位置</p>
+<p>效果如下<br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/1.jpg"><br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/2.jpg"><br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/3.jpg"><br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/4.jpg"></p>
+<p>代码如下<br><img src="/2022/11/25/%E4%BA%BA%E5%83%8F%E8%87%AA%E5%8A%A8%E5%B1%85%E4%B8%AD/1.swift" alt="代码"></p>
 ]]></content>
   </entry>
   <entry>
@@ -3508,15 +3508,6 @@ self.navigationController?.pushViewController(vc, animated: true)
 ]]></content>
   </entry>
   <entry>
-    <title>图片resize导致分辨率变化的问题</title>
-    <url>/2022/11/02/%E5%9B%BE%E7%89%87resize%E5%AF%BC%E8%87%B4%E5%88%86%E8%BE%A8%E7%8E%87%E5%8F%98%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>使用 qmui_imageResized 来修改图片尺寸，在某些情况下会出现相差一个像素的问题，导致错误发生。</p>
-<p>可以使用<br><img src="/2022/11/02/%E5%9B%BE%E7%89%87resize%E5%AF%BC%E8%87%B4%E5%88%86%E8%BE%A8%E7%8E%87%E5%8F%98%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/1.jpg"></p>
-<p>或<br><img src="/2022/11/02/%E5%9B%BE%E7%89%87resize%E5%AF%BC%E8%87%B4%E5%88%86%E8%BE%A8%E7%8E%87%E5%8F%98%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/2.jpg"></p>
-<p>这两种方式来进行尺寸修改，推荐使用第一种，因为它处理尺寸的同时也处理了 bitmap 的格式，可以看到文档中已经进行了说明<br>&#x2F;&#x2F; The following methods will only return a 8-bit per channel context in the DeviceRGB color space.<br>&#x2F;&#x2F; Any new bitmap drawing code is encouraged to use UIGraphicsImageRenderer in lieu of this API.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>向 iOS App 中添加 Flutter 界面</title>
     <url>/2021/01/28/%E5%90%91-iOS-App-%E4%B8%AD%E6%B7%BB%E5%8A%A0-Flutter-%E7%95%8C%E9%9D%A2/</url>
     <content><![CDATA[<p>想要实现该功能，打交道比较频繁的就只有两个类，</p>
@@ -3540,6 +3531,15 @@ events into Flutter and to display frames rendered by the FlutterEngin
 <li>创建新的 FlutterEngine，然后跳转的时候把所需的参数传过去（参数如果太复杂则不建议）</li>
 </ol>
 <p>最后通过 FlutterViewController.pushRoute 方来来进入所需的界面。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>图片resize导致分辨率变化的问题</title>
+    <url>/2022/11/02/%E5%9B%BE%E7%89%87resize%E5%AF%BC%E8%87%B4%E5%88%86%E8%BE%A8%E7%8E%87%E5%8F%98%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>使用 qmui_imageResized 来修改图片尺寸，在某些情况下会出现相差一个像素的问题，导致错误发生。</p>
+<p>可以使用<br><img src="/2022/11/02/%E5%9B%BE%E7%89%87resize%E5%AF%BC%E8%87%B4%E5%88%86%E8%BE%A8%E7%8E%87%E5%8F%98%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/1.jpg"></p>
+<p>或<br><img src="/2022/11/02/%E5%9B%BE%E7%89%87resize%E5%AF%BC%E8%87%B4%E5%88%86%E8%BE%A8%E7%8E%87%E5%8F%98%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/2.jpg"></p>
+<p>这两种方式来进行尺寸修改，推荐使用第一种，因为它处理尺寸的同时也处理了 bitmap 的格式，可以看到文档中已经进行了说明<br>&#x2F;&#x2F; The following methods will only return a 8-bit per channel context in the DeviceRGB color space.<br>&#x2F;&#x2F; Any new bitmap drawing code is encouraged to use UIGraphicsImageRenderer in lieu of this API.</p>
 ]]></content>
   </entry>
   <entry>
@@ -3742,6 +3742,14 @@ events into Flutter and to display frames rendered by the FlutterEngin
 ]]></content>
   </entry>
   <entry>
+    <title>带阴影图片保存时间优化</title>
+    <url>/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>今天解决了个遗留 bug，保存带有阴影的图片时，如果放大倍数很高，会花费很久的时间，检查后，主要卡在了这个地方。<br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/1.jpg"></p>
+<p>经过测试，应该是由于这个函数，采用了先绘制，在裁剪的方式，导致了超出显示范围的部分也占用了资源，从而花费了很多不必要的时间，查找资料后，发现可以使用这个方法进行裁剪与绘制操作<br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/2.jpg"><br>然后将他们的效果进行了下对比（上图为旧方法，下图为新方法）<br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/3.jpg"><br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/4.jpg"></p>
+<p>可以看出，新方法保存的图像更加平滑一些，随后又进行了性能对比<br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/5.jpg"><br>可以看出，在放大倍数比较小情况下，旧方法时间比新方法短，放大倍数比较大的情况下，旧方法的执行时间远大于新方法，新方法执行时长基本在0.1 秒左右，可以接受，故采用新方法进行图片保存。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>当我们调用 setState 的时候，flutter 做了啥？</title>
     <url>/2021/11/10/%E5%BD%93%E6%88%91%E4%BB%AC%E8%B0%83%E7%94%A8-setState-%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8Cflutter-%E5%81%9A%E4%BA%86%E5%95%A5%EF%BC%9F/</url>
     <content><![CDATA[<p>为了更清晰的说明，将整个过程分为两部分</p>
@@ -3763,14 +3771,6 @@ events into Flutter and to display frames rendered by the FlutterEngin
 <p>它调用了 <strong>WidgetsBindings.drawFrame</strong> 方法</p>
 <p>该方法又调用了 <strong>BuildOwner.buildScope</strong> 方法对 Widget 进行刷新。</p>
 <p>到此基本流程已经结束。里面还有需要更深层次的东西还需要我们慢慢进行发掘。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>带阴影图片保存时间优化</title>
-    <url>/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>今天解决了个遗留 bug，保存带有阴影的图片时，如果放大倍数很高，会花费很久的时间，检查后，主要卡在了这个地方。<br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/1.jpg"></p>
-<p>经过测试，应该是由于这个函数，采用了先绘制，在裁剪的方式，导致了超出显示范围的部分也占用了资源，从而花费了很多不必要的时间，查找资料后，发现可以使用这个方法进行裁剪与绘制操作<br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/2.jpg"><br>然后将他们的效果进行了下对比（上图为旧方法，下图为新方法）<br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/3.jpg"><br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/4.jpg"></p>
-<p>可以看出，新方法保存的图像更加平滑一些，随后又进行了性能对比<br><img src="/2022/09/08/%E5%B8%A6%E9%98%B4%E5%BD%B1%E5%9B%BE%E7%89%87%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E4%BC%98%E5%8C%96/5.jpg"><br>可以看出，在放大倍数比较小情况下，旧方法时间比新方法短，放大倍数比较大的情况下，旧方法的执行时间远大于新方法，新方法执行时长基本在0.1 秒左右，可以接受，故采用新方法进行图片保存。</p>
 ]]></content>
   </entry>
   <entry>
