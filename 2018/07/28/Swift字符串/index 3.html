@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com.cn","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="http://example.com.cn/2018/07/28/Swift%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"http://example.com.cn/2018/07/28/Swift%E5%AD%97%E7%AC%A6%E4%B8%B2/","path":"2018/07/28/Swift字符串/","title":"Swift字符串"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Swift字符串 | 黄瑞的博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">黄瑞的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Strings-and-Characters"><span class="nav-number">1.</span> <span class="nav-text">Strings and Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String-Literals-%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E9%9D%A2%E9%87%8F%EF%BC%89"><span class="nav-number">1.0.1.</span> <span class="nav-text">String Literals （字符串字面量）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Multiline-String-Literals-%EF%BC%88%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E9%9D%A2%E9%87%8F%EF%BC%89"><span class="nav-number">1.0.2.</span> <span class="nav-text">Multiline String Literals （多行字符串字面量）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Special-Characters-in-String-Literals-%EF%BC%88%E5%AD%97%E9%9D%A2%E9%87%8F%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%EF%BC%89"><span class="nav-number">1.0.3.</span> <span class="nav-text">Special Characters in String Literals （字面量中的特殊字符）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Extended-String-Delimiters-%EF%BC%88%E6%89%A9%E5%B1%95%E5%AD%97%E7%AC%A6%E5%AE%9A%E7%95%8C%EF%BC%89"><span class="nav-number">1.0.4.</span> <span class="nav-text">Extended String Delimiters （扩展字符定界）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Initializing-an-Empty-String-%EF%BC%88%E5%88%9D%E5%A7%8B%E5%8C%96%E7%A9%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">Initializing an Empty String （初始化空字符串）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Mutability-%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%8F%AF%E5%8F%98%E6%80%A7%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">String Mutability （字符串的可变性）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strings-Are-Value-Types-%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%80%BC%E7%B1%BB%E5%9E%8B%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">Strings Are Value Types （字符串是值类型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-Characters-%EF%BC%88%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">Working with Characters （使用字符）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Concatenating-Strings-and-Characters-%EF%BC%88%E4%B8%B2%E8%81%94%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">Concatenating Strings and Characters （串联字符与字符串）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-interpolation-%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8F%92%E5%80%BC%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">String interpolation （字符串插值）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode"><span class="nav-number">8.</span> <span class="nav-text">Unicode</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Unicode-Scalar-Values-%EF%BC%88Unicode-%E6%A0%87%E9%87%8F%EF%BC%89"><span class="nav-number">8.0.1.</span> <span class="nav-text">Unicode Scalar Values （Unicode 标量）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Extended-Graphoeme-Clusters-%EF%BC%88%E6%89%A9%E5%B1%95%E5%AD%97%E5%BD%A2%E9%9B%86%E7%BE%A4%EF%BC%89"><span class="nav-number">8.0.2.</span> <span class="nav-text">Extended Graphoeme Clusters （扩展字形集群）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Counting-Characters-%EF%BC%88%E5%AD%97%E7%AC%A6%E6%95%B0%E9%87%8F%EF%BC%89"><span class="nav-number">9.</span> <span class="nav-text">Counting Characters （字符数量）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Accessing-and-Modifying-a-String-%EF%BC%88%E8%8E%B7%E5%8F%96%E4%B8%8E%E6%93%8D%E4%BD%9C%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%89"><span class="nav-number">10.</span> <span class="nav-text">Accessing and Modifying a String （获取与操作字符串）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String-Indices-%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B4%A2%E5%BC%95%EF%BC%89"><span class="nav-number">10.0.1.</span> <span class="nav-text">String Indices （字符串索引）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Inserting-and-Removing-%EF%BC%88%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4%EF%BC%89"><span class="nav-number">10.0.2.</span> <span class="nav-text">Inserting and Removing （插入和删除）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Substrings-%EF%BC%88%E5%AD%90%E4%B8%B2%EF%BC%89"><span class="nav-number">11.</span> <span class="nav-text">Substrings （子串）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparing-Strings-%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83%EF%BC%89"><span class="nav-number">12.</span> <span class="nav-text">Comparing Strings （字符串比较）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String-and-Character-Equality-%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E5%AD%97%E7%AC%A6%E7%9B%B8%E7%AD%89%EF%BC%89"><span class="nav-number">12.0.1.</span> <span class="nav-text">String and Character Equality （字符串与字符相等）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Prefix-and-Suffix-Equality-%EF%BC%88%E5%89%8D%E7%BC%80%E4%B8%8E%E5%90%8E%E7%BC%80%E7%9B%B8%E7%AD%89%EF%BC%89"><span class="nav-number">12.0.2.</span> <span class="nav-text">Prefix and Suffix Equality （前缀与后缀相等）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode-Representations-of-Strings-%EF%BC%88Unicode%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%A1%A8%E7%8E%B0%E5%BD%A2%E5%BC%8F%EF%BC%89"><span class="nav-number">13.</span> <span class="nav-text">Unicode Representations of Strings （Unicode字符串的表现形式）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UTF-8"><span class="nav-number">13.0.1.</span> <span class="nav-text">UTF-8</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UTF-16-Representation"><span class="nav-number">13.0.2.</span> <span class="nav-text">UTF-16 Representation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#21-bit-Unicode-Scalar"><span class="nav-number">13.0.3.</span> <span class="nav-text">21-bit Unicode Scalar</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黄瑞"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">黄瑞</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2018/07/28/Swift%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="黄瑞">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Swift字符串 | 黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Swift字符串
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-07-28 19:19:00" itemprop="dateCreated datePublished" datetime="2018-07-28T19:19:00+08:00">2018-07-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="Strings-and-Characters"><a href="#Strings-and-Characters" class="headerlink" title="Strings and Characters"></a>Strings and Characters</h3><h5 id="String-Literals-（字符串字面量）"><a href="#String-Literals-（字符串字面量）" class="headerlink" title="String Literals （字符串字面量）"></a>String Literals （字符串字面量）</h5><pre><code class="Swift">let someString = &quot;Some string literal value&quot;
+</code></pre>
+<h5 id="Multiline-String-Literals-（多行字符串字面量）"><a href="#Multiline-String-Literals-（多行字符串字面量）" class="headerlink" title="Multiline String Literals （多行字符串字面量）"></a>Multiline String Literals （多行字符串字面量）</h5><p>以 <code>&quot;&quot;&quot;</code> 开头与结尾，开头与结尾处的换行会被省略</p>
+<pre><code class="Swift">let quotation = &quot;&quot;&quot;
+The White Rabbit put on his spectacles.  &quot;Where shall I begin,
+please your Majesty?&quot; he asked.
+
+&quot;Begin at the beginning,&quot; the King said gravely, &quot;and go on
+till you come to the end; then stop.&quot;
+&quot;&quot;&quot;
+print(quotation)
+print(&quot;end&quot;)
+// Prints
+// The White Rabbit put on his spectacles.  &quot;Where shall I begin,
+// please your Majesty?&quot; he asked.
+
+// &quot;Begin at the beginning,&quot; the King said gravely, &quot;and go on
+// till you come to the end; then stop.&quot;
+// end
+</code></pre>
+<p>如果不想换行，加入 <code>\</code> 符号，例如</p>
+<pre><code class="Swift">let softWrappedQuotation = &quot;&quot;&quot;
+The White Rabbit put on his spectacles.  &quot;Where shall I begin, \
+please your Majesty?&quot; he asked.
+
+&quot;Begin at the beginning,&quot; the King said gravely, &quot;and go on \
+till you come to the end; then stop.&quot;
+&quot;&quot;&quot;
+print(softWrappedQuotation)
+print(&quot;end&quot;)
+// Prints
+// The White Rabbit put on his spectacles.  &quot;Where shall I begin, please your Majesty?&quot; he asked.
+//
+// &quot;Begin at the beginning,&quot; the King said gravely, &quot;and go on till you come to the end; then stop.&quot;
+// end
+</code></pre>
+<pre><code class="Swift">let lineBreaks = &quot;&quot;&quot;
+
+This string starts with a line break.
+It also ends with a line break.
+
+&quot;&quot;&quot;
+print(lineBreaks)
+print(&quot;end&quot;)
+// Prints
+//
+// This string starts with a line break.
+// It also ends with a line break.
+// 
+// end
+</code></pre>
+<p>结尾处的 <code>&quot;&quot;&quot;</code> 的位置，代表了整段文字的起始位置</p>
+<pre><code class="Swift">let lineBreaks = &quot;&quot;&quot;
+
+     This string starts with a line break.
+   It also ends with a line break.
+
+   &quot;&quot;&quot;
+print(lineBreaks)
+print(&quot;end&quot;)
+// Prints
+//
+//   This string starts with a line break.
+// It also ends with a line break.
+// 
+// end
+</code></pre>
+<h5 id="Special-Characters-in-String-Literals-（字面量中的特殊字符）"><a href="#Special-Characters-in-String-Literals-（字面量中的特殊字符）" class="headerlink" title="Special Characters in String Literals （字面量中的特殊字符）"></a>Special Characters in String Literals （字面量中的特殊字符）</h5><ul>
+<li><code>\0</code> 空字符</li>
+<li><code>\\</code> 反斜杠</li>
+<li><code>\t</code> 跳至下一制表符位置（Tab）</li>
+<li><code>\n</code> 换行符</li>
+<li><code>\r</code> 回车符</li>
+<li><code>\&quot;</code> 双引号</li>
+<li><code>\&#39;</code> 单引号</li>
+<li><code>\u&#123;n&#125;</code> Unicode字符，n 为1-8位十六进制数字</li>
+</ul>
+<pre><code class="Swift">let wiseWords = &quot;\&quot;Imagination is more important than knowledge\&quot; - Einstein&quot;
+// &quot;Imagination is more important than knowledge&quot; - Einstein
+let dollarSign = &quot;\u&#123;24&#125;&quot;        // $,  Unicode scalar U+0024
+let blackHeart = &quot;\u&#123;2665&#125;&quot;      // ♥,  Unicode scalar U+2665
+let sparklingHeart = &quot;\u&#123;1F496&#125;&quot; // 💖, Unicode scalar U+1F496&quot;
+</code></pre>
+<p>想要在多行字符串字面量中添加<code>&quot;&quot;&quot;</code>，需要使用转义字符<code>\&quot;&quot;&quot;</code>或者一个一个转义<code>\&quot;</code></p>
+<pre><code class="Swift">let threeDoubleQuotationMarks = &quot;&quot;&quot;
+Escaping the first quotation mark \&quot;&quot;&quot;
+Escaping all three quotation marks \&quot;\&quot;\&quot;
+&quot;&quot;&quot;
+print(threeDoubleQuotationMarks)
+print(&quot;end&quot;)
+/// Prints
+/// Escaping the first quotation mark &quot;&quot;&quot;
+/// Escaping all three quotation marks &quot;&quot;&quot;
+/// end
+</code></pre>
+<h5 id="Extended-String-Delimiters-（扩展字符定界）"><a href="#Extended-String-Delimiters-（扩展字符定界）" class="headerlink" title="Extended String Delimiters （扩展字符定界）"></a>Extended String Delimiters （扩展字符定界）</h5><p>可以将字符串用<code>#</code>包起来，那么字符串里面的转义字符则不会转义，直接输出，例如</p>
+<pre><code class="Swift">let threeMoreDoubleQuotationMarks = #&quot;&quot;&quot;
+Here are three more double quotes: &quot;&quot;&quot;
+&quot;&quot;&quot;#
+print(threeMoreDoubleQuotationMarks)
+print(&quot;end&quot;)
+/// Prints
+/// Here are three more double quotes: &quot;&quot;&quot;
+/// end
+</code></pre>
+<h3 id="Initializing-an-Empty-String-（初始化空字符串）"><a href="#Initializing-an-Empty-String-（初始化空字符串）" class="headerlink" title="Initializing an Empty String （初始化空字符串）"></a>Initializing an Empty String （初始化空字符串）</h3><pre><code class="Swift">var emptyString = &quot;&quot; // 直接用字面量
+var anotherEmptyString = String() // 使用初始化方法
+if emptyString.isEmpty &#123;
+  print(&quot;Nothing to see here&quot;)
+&#125;
+/// 使用 isEmpty 属性来判断字符串是否为空
+/// Prints
+/// Nothing to see here
+</code></pre>
+<h3 id="String-Mutability-（字符串的可变性）"><a href="#String-Mutability-（字符串的可变性）" class="headerlink" title="String Mutability （字符串的可变性）"></a>String Mutability （字符串的可变性）</h3><pre><code class="Swift">// var 可变
+var variableString = &quot;Horse&quot;
+variableString += &quot; and carriage&quot;
+// variableString is now &quot;Horse and carriage&quot;
+
+// let 不可变
+let constantString = &quot;Highlander&quot;
+constantString += &quot; and another Highlander&quot;
+// this reports a compile-time error - a constant string cannot be modified
+</code></pre>
+<h3 id="Strings-Are-Value-Types-（字符串是值类型）"><a href="#Strings-Are-Value-Types-（字符串是值类型）" class="headerlink" title="Strings Are Value Types （字符串是值类型）"></a>Strings Are Value Types （字符串是值类型）</h3><p>Swift 中的 String 类型是值类型，也就是说如果你创建一个新的字符串，用来作为函数的参数或者复制到某个变量、常量上，它都会先复制一份新的，然后使用新的值来做这些事情。</p>
+<h3 id="Working-with-Characters-（使用字符）"><a href="#Working-with-Characters-（使用字符）" class="headerlink" title="Working with Characters （使用字符）"></a>Working with Characters （使用字符）</h3><p>可以使用 for-in 来遍历字符串中的字符</p>
+<pre><code class="Swift">for character in &quot;Dog!🐶&quot; &#123;
+    print(character)
+&#125;
+// D
+// o
+// g
+// !
+// 🐶
+</code></pre>
+<p>或者直接指定某个变量的类型为 Character 然后对它进行赋值</p>
+<pre><code class="Swift">let exclamationMark: Character = &quot;!&quot; // exclamationMark is Character
+let anotherMark = &quot;!&quot; // anotherMark is String
+</code></pre>
+<p>也可以通过字符数组来创建字符串</p>
+<pre><code class="Swift">let catCharacters: [Character] = [&quot;C&quot;, &quot;a&quot;, &quot;t&quot;, &quot;!&quot;, &quot;🐱&quot;]
+let catString = String(catCharacters)
+print(catString)
+// Prints &quot;Cat!🐱
+</code></pre>
+<h3 id="Concatenating-Strings-and-Characters-（串联字符与字符串）"><a href="#Concatenating-Strings-and-Characters-（串联字符与字符串）" class="headerlink" title="Concatenating Strings and Characters （串联字符与字符串）"></a>Concatenating Strings and Characters （串联字符与字符串）</h3><p>String + String</p>
+<pre><code class="Swift">let string1 = &quot;hello&quot;
+let string2 = &quot; there&quot;
+var welcome = string1 + string2
+// welcome is &quot;hello there&quot;
+</code></pre>
+<p>String +&#x3D; String</p>
+<pre><code class="Swift">var instruction = &quot;look over&quot;
+var string2 = &quot; there&quot;
+instruction += string2
+// instruction is &quot;look over there&quot;
+</code></pre>
+<p>String.append(Character)</p>
+<pre><code class="Swift">welcome = &quot;hello there&quot;
+var exclamationMark: Character = &quot;!&quot;
+welcome.append(exclamationMark)
+// welcome is &quot;hello there!&quot;
+</code></pre>
+<p>多行字符串</p>
+<pre><code class="Swift">let badStart = &quot;&quot;&quot;
+one
+two
+&quot;&quot;&quot;
+let end = &quot;&quot;&quot;
+three
+&quot;&quot;&quot;
+print(badStart + end)
+// Prints two lines:
+// one
+// twothree
+
+let goodStart = &quot;&quot;&quot;
+one
+two
+
+&quot;&quot;&quot;
+print(goodStart + end)
+// Prints three lines:
+// one
+// two
+// three
+</code></pre>
+<h3 id="String-interpolation-（字符串插值）"><a href="#String-interpolation-（字符串插值）" class="headerlink" title="String interpolation （字符串插值）"></a>String interpolation （字符串插值）</h3><p>通过字符串插值可以很容易地在字符串中插入变量、表达式、函数等等</p>
+<pre><code class="Swift">let multiplier = 3
+let message = &quot;\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)&quot;
+// message is &quot;3 times 2.5 is 7.5&quot;
+</code></pre>
+<p>使用<code>#</code>会使字符串插值失效</p>
+<pre><code class="Swift">let multiplier = 3
+let message = #&quot;\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)&quot;#
+// message is &quot;\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)&quot;
+</code></pre>
+<p>想要让字符串插值仍然生效，需要在字符串插值中加上<code>#</code></p>
+<pre><code class="Swift">let multiplier = 3
+let message = #&quot;\#(multiplier) times 2.5 is \#(Double(multiplier) * 2.5)&quot;#
+// message is &quot;3 times 2.5 is 7.5&quot;
+</code></pre>
+<h3 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h3><h5 id="Unicode-Scalar-Values-（Unicode-标量）"><a href="#Unicode-Scalar-Values-（Unicode-标量）" class="headerlink" title="Unicode Scalar Values （Unicode 标量）"></a>Unicode Scalar Values （Unicode 标量）</h5><pre><code class="Swift">let a = &quot;\u&#123;0061&#125;&quot; // 0061 = 0x0061
+let b = &quot;\u&#123;1F425&#125;&quot; // 1F425 = 0x1F425
+print(a+b)
+print(&quot;end&quot;)
+// Prints
+// a🐥
+// end
+</code></pre>
+<h5 id="Extended-Graphoeme-Clusters-（扩展字形集群）"><a href="#Extended-Graphoeme-Clusters-（扩展字形集群）" class="headerlink" title="Extended Graphoeme Clusters （扩展字形集群）"></a>Extended Graphoeme Clusters （扩展字形集群）</h5><p>Swift 中每一个 Character 都是一个单独的扩展字形集群。它是一个由一个或多个 Unicode 纯量组合而成的字符，例如：</p>
+<pre><code class="Swift">let eAcute: Character = &quot;\u&#123;E9&#125;&quot;
+let decoration: Character = &quot;\u&#123;301&#125;&quot;
+let combine = &quot;\u&#123;E9&#125;\u&#123;301&#125;&quot;
+print(eAcute)
+print(decoration)
+print(combine)
+print(&quot;end&quot;)
+é
+ ́
+é́
+end
+</code></pre>
+<p>另一个例子</p>
+<pre><code class="Swift">let precomposed: Character = &quot;\u&#123;D55C&#125;&quot;                  // 한
+let decomposed: Character = &quot;\u&#123;1112&#125;\u&#123;1161&#125;\u&#123;11AB&#125;&quot;   // ᄒ, ᅡ, ᆫ
+// precomposed is 한, decomposed is 한
+print(precomposed)
+print(decomposed)
+print(&quot;end&quot;)
+// Prints
+// 한
+// 한
+// end
+</code></pre>
+<p>或者国旗</p>
+<pre><code class="Swift">var a = &quot;\u&#123;1F1FA&#125;&quot;; // 🇺
+var b = &quot;\u&#123;1F1F8&#125;&quot; // 🇸
+var ab: Character = &quot;\u&#123;1F1FA&#125;\u&#123;1F1F8&#125;&quot; // 🇺🇸
+a = &quot;\u&#123;1F1E8&#125;&quot; // 🇨
+b = &quot;\u&#123;1F1F3&#125;&quot; // 🇳
+ab = &quot;\u&#123;1F1E8&#125;\u&#123;1F1F3&#125;&quot; // 🇨🇳
+</code></pre>
+<h3 id="Counting-Characters-（字符数量）"><a href="#Counting-Characters-（字符数量）" class="headerlink" title="Counting Characters （字符数量）"></a>Counting Characters （字符数量）</h3><pre><code class="Swift">var str = &quot;message&quot; // count is 7
+</code></pre>
+<p>假如有扩展字形集群，以最终字符数为准</p>
+<pre><code class="Swift">var word = &quot;cafe&quot; // count is 4
+word += &quot;\u&#123;301&#125;&quot; // word is café, count is 4
+</code></pre>
+<h3 id="Accessing-and-Modifying-a-String-（获取与操作字符串）"><a href="#Accessing-and-Modifying-a-String-（获取与操作字符串）" class="headerlink" title="Accessing and Modifying a String （获取与操作字符串）"></a>Accessing and Modifying a String （获取与操作字符串）</h3><h5 id="String-Indices-（字符串索引）"><a href="#String-Indices-（字符串索引）" class="headerlink" title="String Indices （字符串索引）"></a>String Indices （字符串索引）</h5><pre><code class="Swift">let greeting = &quot;Guten Tag!&quot;
+greeting[greeting.startIndex] // G
+greeting[greeting.index(before: greeting.endIndex)] // !
+greeting[greeting.index(after: greeting.startIndex)] // u
+greeting[greeting.index(greeting.startIndex, offsetBy: 7)] // a
+greeting[greeting.index(greeting.endIndex, offsetBy: -1)] // !
+</code></pre>
+<p>超出范围的情况</p>
+<pre><code class="Swift">greeting[greeting.endIndex] // Error
+greeting[greeting.index(after: greeting.endIndex)] // Error
+</code></pre>
+<p>通过遍历索引遍历字符串，其中，terminator 是指的结束符，默认为<code>\n</code>（换行），指定为空字符串后，输出完毕不会换行了。</p>
+<pre><code class="Swift">for index in greeting.indices &#123;
+    print(&quot;\(greeting[index]) &quot;, terminator: &quot;&quot;)
+&#125;
+// Prints
+// G u t e n   T a g ! 
+</code></pre>
+<h5 id="Inserting-and-Removing-（插入和删除）"><a href="#Inserting-and-Removing-（插入和删除）" class="headerlink" title="Inserting and Removing （插入和删除）"></a>Inserting and Removing （插入和删除）</h5><p>插入单个字符（Character）的情况</p>
+<pre><code class="Swift">var welcome = &quot;hello&quot;
+welcome.insert(&quot;!&quot;, at: welcome.endIndex) // welcome is &quot;hello!&quot;
+
+var at = welcome.index(before: welcome.endIndex)
+welcome[at] // !
+welcome.insert(contentsOf: &quot; there&quot;, at: at) // welcome is &quot;hello there!&quot;
+
+at = welcome.index(before: welcome.endIndex)
+welcome[at] // !
+welcome.remove(at: at) // welcome is &quot;hello there&quot;
+
+let start = welcome.index(welcome.endIndex, offsetBy: -6)
+welcome[start] // &quot; &quot;
+let end = welcome.endIndex
+let range = start..&lt;end
+welcome.removeSubrange(range) // welcome is &quot;hello&quot;
+</code></pre>
+<h3 id="Substrings-（子串）"><a href="#Substrings-（子串）" class="headerlink" title="Substrings （子串）"></a>Substrings （子串）</h3><p>Substrings !&#x3D; String</p>
+<pre><code class="Swift">let greeting = &quot;Hello, world!&quot;
+let index = greeting.firstIndex(of: &quot;,&quot;) ?? greeting.endIndex
+let begining: String.SubSequence = greeting[..&lt;index] // begining is &quot;Hello&quot;
+let str: String = begining // Error, String is not a String.SubSequence
+let str1: String = String(begining) // OK
+</code></pre>
+<h3 id="Comparing-Strings-（字符串比较）"><a href="#Comparing-Strings-（字符串比较）" class="headerlink" title="Comparing Strings （字符串比较）"></a>Comparing Strings （字符串比较）</h3><p>Swift 提供了三种比较文本值的方式</p>
+<ul>
+<li>全量比较</li>
+<li>前缀比较</li>
+<li>后缀比较</li>
+</ul>
+<h5 id="String-and-Character-Equality-（字符串与字符相等）"><a href="#String-and-Character-Equality-（字符串与字符相等）" class="headerlink" title="String and Character Equality （字符串与字符相等）"></a>String and Character Equality （字符串与字符相等）</h5><p>使用<code>==</code>与<code>!=</code>进行比较</p>
+<pre><code class="Swift">let quotation = &quot;We&#39;re a lot alike, you and I.&quot;
+let sameQuotation = &quot;We&#39;re a lot alike, you and I.&quot;
+if quotation == sameQuotation &#123;
+    print(&quot;These two strings are considered equal&quot;)
+&#125;
+// Prints &quot;These two strings are considered equal&quot;
+</code></pre>
+<p>注意，这种比较是语言的意思与外在的表现上的</p>
+<pre><code class="Swift">let e1 = &quot;\u&#123;E9&#125;&quot; // é
+let e2 = &quot;\u&#123;65&#125;\u&#123;301&#125;&quot; // é
+print(e1 == e2) // True
+</code></pre>
+<p>相反的，对应英语中的”A“，和俄语中的”A“，他们是不一样的</p>
+<pre><code class="Swift">let latinCapitalLetterA: Character = &quot;\u&#123;41&#125;&quot; // English A
+let cyrillicCapitalLetterA: Character = &quot;\u&#123;0410&#125;&quot; // Russian A
+print(latinCapitalLetterA == cyrillicCapitalLetterA) // False
+</code></pre>
+<h5 id="Prefix-and-Suffix-Equality-（前缀与后缀相等）"><a href="#Prefix-and-Suffix-Equality-（前缀与后缀相等）" class="headerlink" title="Prefix and Suffix Equality （前缀与后缀相等）"></a>Prefix and Suffix Equality （前缀与后缀相等）</h5><pre><code class="Swift">let romeoAndJuliet = [
+    &quot;Act 1 Scene 1: Verona, A public place&quot;,
+    &quot;Act 1 Scene 2: Capulet&#39;s mansion&quot;,
+    &quot;Act 1 Scene 3: A room in Capulet&#39;s mansion&quot;,
+    &quot;Act 1 Scene 4: A street outside Capulet&#39;s mansion&quot;,
+    &quot;Act 1 Scene 5: The Great Hall in Capulet&#39;s mansion&quot;,
+    &quot;Act 2 Scene 1: Outside Capulet&#39;s mansion&quot;,
+    &quot;Act 2 Scene 2: Capulet&#39;s orchard&quot;,
+    &quot;Act 2 Scene 3: Outside Friar Lawrence&#39;s cell&quot;,
+    &quot;Act 2 Scene 4: A street in Verona&quot;,
+    &quot;Act 2 Scene 5: Capulet&#39;s mansion&quot;,
+    &quot;Act 2 Scene 6: Friar Lawrence&#39;s cell&quot;
+]
+var act1SceneCount = 0
+var cellCount = 0
+for scene in romeoAndJuliet &#123;
+    if scene.hasPrefix(&quot;Act 1 &quot;) &#123;
+        act1SceneCount += 1
+    &#125;
+    if scene.hasSuffix(&quot;cell&quot;) &#123;
+        cellCount += 1
+    &#125;
+&#125;
+print(&quot;There are \(act1SceneCount) scenes in Act 1&quot;)
+// Prints &quot;There are 5 scenes in Act 1&quot;
+print(&quot;There are \(cellCount) scenes end with \&quot;cell\&quot;&quot;)
+// Prints &quot;There are 2 scenes end with &quot;cell&quot;&quot;
+</code></pre>
+<h3 id="Unicode-Representations-of-Strings-（Unicode字符串的表现形式）"><a href="#Unicode-Representations-of-Strings-（Unicode字符串的表现形式）" class="headerlink" title="Unicode Representations of Strings （Unicode字符串的表现形式）"></a>Unicode Representations of Strings （Unicode字符串的表现形式）</h3><p>当 Unicode 字符串要写入文件或者其他存储位置时。会有几种不同的编码格式</p>
+<ul>
+<li>UTF-8</li>
+<li>UTF-16</li>
+<li>21-bit Unicode Scalar</li>
+</ul>
+<h5 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h5><table>
+  <tr align=center>
+    <td>Character</td>
+    <td>D</br><small>U+0044</small></td>
+    <td>o</br><small>U+006F</small></td>
+    <td>g</br><small>U+0067</small></td>
+    <td colspan="3">‼</br><small>U+203C</small></td>
+    <td colspan="4">🐶</br><small>U+1F436</small></td>
+  </tr>
+  <tr align=center>
+    <td>UTF-8</br>Code Unit</td>
+    <td>68</td>
+    <td>111</td>
+    <td>103</td>
+    <td>226</td>
+    <td>128</td>
+    <td>188</td>
+    <td>240</td>
+    <td>159</td>
+    <td>144</td>
+    <td>182</td>
+  </tr>
+  <tr align=center>
+    <td>Position</td>
+    <td>0</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+  </tr>
+</table>
+
+<h5 id="UTF-16-Representation"><a href="#UTF-16-Representation" class="headerlink" title="UTF-16 Representation"></a>UTF-16 Representation</h5><table>
+  <tr align=center>
+    <td>Character</td>
+    <td>D</br><small>U+0044</small></td>
+    <td>o</br><small>U+006F</small></td>
+    <td>g</br><small>U+0067</small></td>
+    <td>‼</br><small>U+203C</small></td>
+    <td colspan="2">🐶</br><small>U+1F436</small></td>
+  </tr>
+  <tr align=center>
+    <td>UTF-8</br>Code Unit</td>
+    <td>68</td>
+    <td>111</td>
+    <td>103</td>
+    <td>8252</td>
+    <td>55357</td>
+    <td>56374</td>
+  </tr>
+  <tr align=center>
+    <td>Position</td>
+    <td>0</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+  </tr>
+</table>
+
+<h5 id="21-bit-Unicode-Scalar"><a href="#21-bit-Unicode-Scalar" class="headerlink" title="21-bit Unicode Scalar"></a>21-bit Unicode Scalar</h5><table>
+  <tr align=center>
+    <td>Character</td>
+    <td>D</br><small>U+0044</small></td>
+    <td>o</br><small>U+006F</small></td>
+    <td>g</br><small>U+0067</small></td>
+    <td>‼</br><small>U+203C</small></td>
+    <td colspan="2">🐶</br><small>U+1F436</small></td>
+  </tr>
+  <tr align=center>
+    <td>UTF-8</br>Code Unit</td>
+    <td>68</td>
+    <td>111</td>
+    <td>103</td>
+    <td>8252</td>
+    <td>128054</td>
+  </tr>
+  <tr align=center>
+    <td>Position</td>
+    <td>0</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+  </tr>
+</table>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/07/27/Swift%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AC%A6/" rel="prev" title="Swift基本操作符">
+                  <i class="fa fa-chevron-left"></i> Swift基本操作符
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/07/31/Swift%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/" rel="next" title="Swift集合类型">
+                  Swift集合类型 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄瑞</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

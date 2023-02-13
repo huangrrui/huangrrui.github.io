@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com.cn","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="http://example.com.cn/2017/11/12/NAT%E5%8D%8F%E8%AE%AE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"http://example.com.cn/2017/11/12/NAT%E5%8D%8F%E8%AE%AE/","path":"2017/11/12/NAT协议/","title":"NAT协议"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>NAT协议 | 黄瑞的博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">黄瑞的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NAT%E5%9B%9B%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">NAT四种模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-Core"><span class="nav-number">1.1.</span> <span class="nav-text">Full Core</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Address-Restricted-Cone"><span class="nav-number">1.2.</span> <span class="nav-text">Address Restricted Cone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Port-Restricted-Cone"><span class="nav-number">1.3.</span> <span class="nav-text">Port Restricted Cone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symmetric"><span class="nav-number">1.4.</span> <span class="nav-text">Symmetric</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NAT%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B"><span class="nav-number">2.</span> <span class="nav-text">NAT类型检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BF%E9%80%8F%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">穿透表</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黄瑞"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">黄瑞</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2017/11/12/NAT%E5%8D%8F%E8%AE%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="黄瑞">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="NAT协议 | 黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NAT协议
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2017-11-12 20:27:49 / Modified: 20:27:00" itemprop="dateCreated datePublished" datetime="2017-11-12T20:27:49+08:00">2017-11-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>NAT(Network Address Translation)，网络地址转换协议</p>
+<h2 id="NAT四种模式"><a href="#NAT四种模式" class="headerlink" title="NAT四种模式"></a>NAT四种模式</h2><p>Full Cone<br>Address Restricted Cone<br>Port Restricted Cone<br>Symmetric</p>
+<h3 id="Full-Core"><a href="#Full-Core" class="headerlink" title="Full Core"></a>Full Core</h3><p>这种模式NAT内部的机器A连接过外网机器C后，NAT会打开一个端口。然后外网的任何发到这个打开的端口的UDP数据报都可以到达A。不管是不是C发过来的。</p>
+<h3 id="Address-Restricted-Cone"><a href="#Address-Restricted-Cone" class="headerlink" title="Address Restricted Cone"></a>Address Restricted Cone</h3><p>这种NAT内部的机器A连接过外网的机器C后，NAT打开一个端口。然后C可以用任何端口和A通信，其他的外网机器不行。</p>
+<h3 id="Port-Restricted-Cone"><a href="#Port-Restricted-Cone" class="headerlink" title="Port Restricted Cone"></a>Port Restricted Cone</h3><p>这种NAT内部的机器A连接过外网的机器C后，NAT打开一个端口。然后C可以用原来的端口和A通信，其他的外网机器不行。</p>
+<h3 id="Symmetric"><a href="#Symmetric" class="headerlink" title="Symmetric"></a>Symmetric</h3><p>与 Port Restricted Cone 类似，但是对每一个内部机器A访问的外网机器B，都会生成一个新的外部端口号，形成 内部IP和Port 与 NAT IP和端口 形成一对多的关系</p>
+<h2 id="NAT类型检测"><a href="#NAT类型检测" class="headerlink" title="NAT类型检测"></a>NAT类型检测</h2><p>使用STUN服务器，该服务器需要有两个公网IP，IP1:Port 和 IP2:Port</p>
+<ol>
+<li>Client -&gt; IP1:Port, Server 使用 IP1:Port 将收到的请求源IP:Port -&gt; Client，如果一致，则无NAT，否则进入下一步</li>
+<li>Client -&gt; IP1:Port, Server 使用 IP2:Port -&gt; Client, 如果 Client 收到回复，则为 Full Cone NAT，否则进入下一步</li>
+<li>Client -&gt; IP2:Port, Server 使用 IP2:Port 将收到的源 IP:Port -&gt; Client, Client 将该 Port 与第1步收到的 Port 对比，如果不一致，则为 Symmetric NAT，否则进入下一步</li>
+<li>Client -&gt; IP2:Port, 要求 Server 使用该IP的另一个端口回答，Server 回复后，如果 Client 收到回答，则为 Address Restricted Cone NAT，否则为 Port Restricted Cone NAT</li>
+</ol>
+<h2 id="穿透表"><a href="#穿透表" class="headerlink" title="穿透表"></a>穿透表</h2><table>
+<thead>
+<tr>
+<th align="center">A客户端NAT类型</th>
+<th align="center">B客户端NAT类型</th>
+<th align="center">能否穿透</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">全锥</td>
+<td align="center">任何类型</td>
+<td align="center">能打通</td>
+</tr>
+<tr>
+<td align="center">地址受限制</td>
+<td align="center">地址受限制&#x2F;端口受限制&#x2F;对称型</td>
+<td align="center">能打通</td>
+</tr>
+<tr>
+<td align="center">端口受限制</td>
+<td align="center">端口受限制</td>
+<td align="center">能打通</td>
+</tr>
+<tr>
+<td align="center">端口限制</td>
+<td align="center">对称型</td>
+<td align="center">不能打通</td>
+</tr>
+<tr>
+<td align="center">对称型</td>
+<td align="center">对称型</td>
+<td align="center">不能打通</td>
+</tr>
+</tbody></table>
+<p>UDP打洞<br><img src="/2017/11/12/NAT%E5%8D%8F%E8%AE%AE/1.png"></p>
+<ol>
+<li>ClientA请求Server。</li>
+<li>ClientB请求Server。</li>
+<li>Server把ClientA的IP和端口信息发给ClientB。</li>
+<li>Server把ClientB的IP和端口信息发给ClientA。</li>
+<li>ClientA利用信息给ClientB发消息。（A信任B）</li>
+<li>ClinetB利用信息给ClientA发消息。（B信任A）</li>
+<li>连接已经建立。两者可以直接通信了。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/06/03/%E4%BD%BF%E7%94%A8-copy-%E4%B8%8E-mutableCopy-%E6%97%B6%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/" rel="prev" title="使用 copy 与 mutableCopy 时可能会遇到的坑">
+                  <i class="fa fa-chevron-left"></i> 使用 copy 与 mutableCopy 时可能会遇到的坑
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/04/11/%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8%E6%A3%80%E6%B5%8B/" rel="next" title="循环引用检测">
+                  循环引用检测 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄瑞</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

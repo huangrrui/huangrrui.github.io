@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com.cn","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="http://example.com.cn/2022/07/19/Metal-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%BB%98%E5%88%B6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"http://example.com.cn/2022/07/19/Metal-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%BB%98%E5%88%B6/","path":"2022/07/19/Metal-三角形绘制/","title":"Metal 三角形绘制"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Metal 三角形绘制 | 黄瑞的博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">黄瑞的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黄瑞"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">黄瑞</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2022/07/19/Metal-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%BB%98%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="黄瑞">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Metal 三角形绘制 | 黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Metal 三角形绘制
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-19 19:49:42 / Modified: 19:49:00" itemprop="dateCreated datePublished" datetime="2022-07-19T19:49:42+08:00">2022-07-19</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>今天按照自己的想法吧三角形的绘制重新改了下，Metal 传递顶点数据方便太多（也可能是 OpenGL 学艺不精？），可以直接定义一个包含了位置信息与颜色信息的结构体，将整个结构体传入就可以了，而且 Metal 的 shader 语法是 C++ 的一个变体，里面很多东西都是相通的。</p>
+<p>不同于 OpenGL 中的 vertex shade，我们通过在 shader 中给 glPosition 赋值来告诉 GPU 顶点数据，Metal 还可以通过 [[position]] 修饰符来告诉 GPU 顶点数据。</p>
+<p>我目前所学到的，有两种方法来设置顶点信息，一种是直接返回顶点信息，例如</p>
+<pre><code class="c++">vertex vector_float4 vertexShader(
+                                  uint vertexID [[vertex_id]],
+                                  device const vector_float2* vertices [[buffer(0)]],
+                                  device const vector_float2* viewport [[buffer(1)]]
+                                  )
+&#123;
+    vector_float4 out = vector_float4(0, 0, 0, 1);
+    vector_float2 viewportSize = vector_float2(*viewport);
+
+    out.position.xy = vertices[vertexID].xy / (viewportSize / 2);
+    return out;
+&#125;
+</code></pre>
+<p>但是这样会有一个问题，fragment 中的颜色信息没办法传进去，虽然可以使用 commandEncoder.setFragmanetBuffer 方法来给 fragment 函数传入相关参数，但是看了下 MSL（Metal Shading Language） 的文档，没有一个类似于 [[vertex_id]] 的修饰符来为每一个顶点生成一个索引，没有办法确定我该用数据中的哪一个元素作为定点到的颜色值。(可能是还没学到，毕竟纹理部分还没学到)</p>
+<p>另一种方式是使用结构体，非常方便！</p>
+<pre><code class="c++">vertex RasterizeData vertexShader(
+                                  uint vertexID [[vertex_id]],
+                                  device const vector_float2* vertices [[buffer(0)]],
+                                  device const vector_float3* fragments [[buffer(1)]],
+                                  device const vector_float2* viewport [[buffer(2)]],
+                                  device const VertexData* vertexDatas [[buffer(3)]]
+                                  )
+&#123;
+    RasterizeData out;
+    
+    vector_float2 viewportSize = vector_float2(*viewport);
+    
+    out.position = vector_float4(0.0, 0.0, 0.0, 1.0);
+    out.position.xy = vertexDatas[vertexID].position / (viewportSize / 2);
+    
+    out.color = vector_float4(0.0, 0.0, 0.0, 1.0);
+    out.color.xyz = vertexDatas[vertexID].color;
+    
+    return out;
+&#125;
+
+struct RasterizeData&#123;
+    float4 position [[position]]; 
+    float4 color;
+&#125;;
+</code></pre>
+<p>通过定义这样一个结构体，并加上 [[position]] 修饰符来告诉 shader，这个属性里面的信息就是顶点数据，然后再 fragment shader 里，用 [[stage_in]] 修饰符来告诉 fragment shader，这个参数是 vertexShader 传进来的，来拿到颜色信息。</p>
+<pre><code class="c++">fragment vector_float4 fragmentShader(RasterizeData in [[stage_in]])
+&#123;
+    return in.color;
+&#125;
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/14/Metal-%E5%AD%A6%E4%B9%A0%E7%BB%93%E6%9E%84%E5%9B%BE%EF%BC%88%E7%AE%80%E5%8D%95%E7%89%88%EF%BC%89/" rel="prev" title="Metal 学习结构图（简单版）">
+                  <i class="fa fa-chevron-left"></i> Metal 学习结构图（简单版）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/02/Metal-%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E4%B8%8E%E6%B8%B2%E6%9F%93%E5%9B%BE%E7%89%87/" rel="next" title="Metal 处理图片与渲染图片">
+                  Metal 处理图片与渲染图片 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄瑞</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
