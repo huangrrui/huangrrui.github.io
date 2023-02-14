@@ -22,14 +22,14 @@
 
 
 
-<link rel="canonical" href="http://example.com.cn/2022/03/28/flutter-%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/">
+<link rel="canonical" href="http://example.com.cn/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"http://example.com.cn/2022/03/28/flutter-%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/","path":"2022/03/28/flutter-圆角边框/","title":"flutter 圆角边框"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"http://example.com.cn/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/","path":"2023/02/14/iOS实现高斯模糊效果背景遮罩的方法/","title":"iOS实现高斯模糊效果背景遮罩的方法"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>flutter 圆角边框 | 黄瑞的博客</title>
+<title>iOS实现高斯模糊效果背景遮罩的方法 | 黄瑞的博客</title>
   
 
 
@@ -167,7 +167,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2022/03/28/flutter-%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -180,12 +180,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="flutter 圆角边框 | 黄瑞的博客">
+      <meta itemprop="name" content="iOS实现高斯模糊效果背景遮罩的方法 | 黄瑞的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          flutter 圆角边框
+          iOS实现高斯模糊效果背景遮罩的方法
         </h1>
 
         <div class="post-meta-container">
@@ -197,7 +197,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-03-28 20:10:08 / Modified: 20:10:00" itemprop="dateCreated datePublished" datetime="2022-03-28T20:10:08+08:00">2022-03-28</time>
+      <time title="Created: 2023-02-14 22:23:31 / Modified: 22:26:18" itemprop="dateCreated datePublished" datetime="2023-02-14T22:23:31+08:00">2023-02-14</time>
     </span>
 
   
@@ -210,22 +210,44 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>今天在视觉还原的时候遇到了一个问题，flutter 如何在裁剪的同时，设置一个贴合边缘的边框。</p>
-<p>一开始想到的方案是使用 Container.decoration 属性来完成，通过提供一个设置了圆角和 BoxDecoration 对象来实现。</p>
-<p>但是如果 Container.child 是一张图片，图片是不会被裁减的，所以需要换一种实现方式，效果对比如下<br><img src="/2022/03/28/flutter-%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/1.jpg"></p>
-<p>代码如下</p>
-<pre><code class="dart">Container(
-  foregroundDecoration: BoxDecoration(
-    border: Border.all(color: Colors.red, width: 2),
-    borderRadius: BorderRadius.circular(16),
-  ),
-  child: ClipRRect(
-    borderRadius: BorderRadius.circular(16),
-    child: _image(),
-  ),
-)
+        <ol>
+<li>使用原声的 UIEffectView 及 UIBlurEffect，优点是代码简单，缺点是自定义性较差，只有系统提供的几种固定效果，可能不满足设计需求，代码与效果如下</li>
+</ol>
+<pre><code class="swift">let effect_view = UIVisualEffectView(frame: self.view.bounds)
+effect_view.effect = UIBlurEffect(style: .light)
+self.view.addSubview(effect_view)
 </code></pre>
-<p>通过 foregroundDecoration 来设置圆角边框，通过 ClipRRect 来裁剪圆角图片，即可实现该效果。</p>
+<p><img src="/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/1.png"></p>
+<ol start="2">
+<li>先将所需模糊的背景进行截图，一般截取整个屏幕，然后使用 CIFilter 进行高斯模糊，随后伪装成背景盖在原来的界面上即可，优点是模糊度可以自定义，缺点是由于是由于是假背景，不像原生那样是带透明度的，所以背景的一变化无法显示出来。代码与效果如下</li>
+</ol>
+<pre><code class="swift">/// 截屏
+func screen_shot() -&gt; UIImage? &#123;
+    guard let window = (UIApplication.shared.delegate as? AppDelegate)?.window else &#123; return nil &#125;
+    UIGraphicsBeginImageContextWithOptions(UIScreen.main.bounds.size, false, UIScreen.main.scale)
+    
+    guard let context = UIGraphicsGetCurrentContext() else &#123; return nil &#125;
+    window.layer.render(in: context)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return image
+&#125;
+
+/// 模糊处理
+func blur_image(image: UIImage) -&gt; UIImage? &#123;
+    let context = CIContext(options: nil)
+    guard let ciImage = CIImage(image: image) else &#123; return nil &#125;
+    guard let filter = CIFilter(name: &quot;CIGaussianBlur&quot;) else &#123; return nil &#125;
+    filter.setValue(ciImage, forKey: kCIInputImageKey)
+    // 设置模糊程度
+    filter.setValue(NSNumber(floatLiteral: 10), forKey: &quot;inputRadius&quot;)
+    guard let result = filter.value(forKey: kCIOutputImageKey) as? CIImage else &#123; return nil &#125;
+    guard let outImage = context.createCGImage(result, from: ciImage.extent) else &#123; return nil &#125;
+    let blurImage = UIImage(cgImage: outImage)
+    return blurImage
+&#125;
+</code></pre>
+<p><img src="/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/2.png"></p>
 
     </div>
 
@@ -239,14 +261,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/03/21/AS%E8%BF%90%E8%A1%8Cflutter-App-%E6%89%BE%E4%B8%8D%E5%88%B0-Cocoapods-%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" rel="prev" title="AS运行flutter App 找不到 Cocoapods 的解决方法">
-                  <i class="fa fa-chevron-left"></i> AS运行flutter App 找不到 Cocoapods 的解决方法
+                <a href="/2023/02/09/%E7%9B%91%E5%90%AC-present-VC-%E4%B8%8B%E6%8B%89%E6%B6%88%E5%A4%B1%E4%BA%8B%E4%BB%B6/" rel="prev" title="监听 present VC 下拉消失事件">
+                  <i class="fa fa-chevron-left"></i> 监听 present VC 下拉消失事件
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/04/10/%E8%A7%86%E9%A2%91%E5%AF%B9%E6%AF%94%E8%84%9A%E6%9C%AC/" rel="next" title="视频对比脚本">
-                  视频对比脚本 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

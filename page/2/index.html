@@ -139,7 +139,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -157,6 +157,77 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2022/10/28/Metal-%E7%94%BB%E6%9D%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="黄瑞">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/28/Metal-%E7%94%BB%E6%9D%BF/" class="post-title-link" itemprop="url">Metal 画板</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-10-28 21:33:07 / Modified: 21:33:00" itemprop="dateCreated datePublished" datetime="2022-10-28T21:33:07+08:00">2022-10-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Metal 版画板已完成<br>原理比较简单，难点主要在于笔刷尺寸的计算以及缩放平移旋转的计算</p>
+<p><img src="/2022/10/28/Metal-%E7%94%BB%E6%9D%BF/1.zip" alt="项目文件"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -901,182 +972,6 @@ print(depth)
 </code></pre>
 <p>完整的项目如下，绘制了两个不同深度的三角形，点击相应的地方会打印出当前点击位置的深度值</p>
 <p><img src="/2022/08/10/Metal-%E5%BC%80%E5%90%AF%E6%B7%B1%E5%BA%A6%E6%B5%8B%E8%AF%95/1.zip" alt="项目代码"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2022/08/02/Metal-%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E4%B8%8E%E6%B8%B2%E6%9F%93%E5%9B%BE%E7%89%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="黄瑞">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="黄瑞的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 黄瑞的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/08/02/Metal-%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E4%B8%8E%E6%B8%B2%E6%9F%93%E5%9B%BE%E7%89%87/" class="post-title-link" itemprop="url">Metal 处理图片与渲染图片</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-08-02 20:52:26 / Modified: 20:52:00" itemprop="dateCreated datePublished" datetime="2022-08-02T20:52:26+08:00">2022-08-02</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在 Metal 中，一个 RenderPass 代表了一个渲染命令组成的序列，可以通过创建两个不同的 RenderPass 来实现：一个 RenderPass 将图片经过处理后渲染到一个 Texture 中，另外一个将它渲染到屏幕上进行显示。</p>
-<p>以一个例子来展示，我们将从本地读取一张图片，将其灰度化后，显示在 App 上。<br>原图与处理后的图片<br><img src="/2022/08/02/Metal-%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E4%B8%8E%E6%B8%B2%E6%9F%93%E5%9B%BE%E7%89%87/1.jpg"><br><img src="/2022/08/02/Metal-%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E4%B8%8E%E6%B8%B2%E6%9F%93%E5%9B%BE%E7%89%87/2.jpg"></p>
-<p>创建一个 Mac App，然后拉一个 NSView 到 ViewController 中，然后把它的类型设置为 MTKView。接下来：</p>
-<h2 id="第一步，读取原始图片数据"><a href="#第一步，读取原始图片数据" class="headerlink" title="第一步，读取原始图片数据"></a>第一步，读取原始图片数据</h2><pre><code class="swift">let path = Bundle.main.path(forResource: &quot;1&quot;, ofType: &quot;jpg&quot;)!
-let url = URL(fileURLWithPath: path)
-let data = try! Data(contentsOf: url)
-let image = NSImage(data: data)!
-cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil)!
-imageData = cgImage.dataProvider!.data! as NSData
-</code></pre>
-<p>与 iOS 不同，macOS 需要使用别的 API 获取 CGImage 对象</p>
-<h2 id="第二步，创建-ImageTexture-存放原始图片数据"><a href="#第二步，创建-ImageTexture-存放原始图片数据" class="headerlink" title="第二步，创建 ImageTexture 存放原始图片数据"></a>第二步，创建 ImageTexture 存放原始图片数据</h2><pre><code class="swift">let descriptor = MTLTextureDescriptor()
-descriptor.textureType = .type2D
-descriptor.width = cgImage.width
-descriptor.height = cgImage.height
-descriptor.pixelFormat = .rgba8Unorm
-descriptor.usage = [.shaderRead]
-imageTexture = device.makeTexture(descriptor: descriptor)
-        
-/// 写入图片数据
-let region = MTLRegionMake2D(0, 0, cgImage.width, cgImage.height)
-imageTexture.replace(region: region, mipmapLevel: 0, withBytes: imageData.bytes, bytesPerRow: cgImage.bytesPerRow)
-</code></pre>
-<p>代码比较简单，通过创建 MTLTextureDescriptor，来创建 MTLTexture 对象</p>
-<h2 id="第三步，创建-Offscreen-Texture，它是用来保存处理后的图片数据"><a href="#第三步，创建-Offscreen-Texture，它是用来保存处理后的图片数据" class="headerlink" title="第三步，创建 Offscreen Texture，它是用来保存处理后的图片数据"></a>第三步，创建 Offscreen Texture，它是用来保存处理后的图片数据</h2><pre><code class="swift">let descriptor = MTLTextureDescriptor()
-descriptor.textureType = .type2D
-descriptor.width = imageTexture.width
-descriptor.height = imageTexture.height
-descriptor.pixelFormat = imageTexture.pixelFormat
-descriptor.usage = [.renderTarget, .shaderRead]
-offscreenTexture = device.makeTexture(descriptor: descriptor)
-</code></pre>
-<p>需要注意的是，这个 texture 的 usage 比上一个多了 renderTarget，表示它是一个渲染目标，用来存放渲染的结果，准确设置 usage 可以提高性能，因为系统可以根据你设置的 usage 来优化内存。</p>
-<h2 id="第四部，创建-Offscreen-Render-Pipeline，用于离屏渲染，处理原始图片"><a href="#第四部，创建-Offscreen-Render-Pipeline，用于离屏渲染，处理原始图片" class="headerlink" title="第四部，创建 Offscreen Render Pipeline，用于离屏渲染，处理原始图片"></a>第四部，创建 Offscreen Render Pipeline，用于离屏渲染，处理原始图片</h2><pre><code class="swift">let library = device.makeDefaultLibrary()!
-let descriptor = MTLRenderPipelineDescriptor()
-descriptor.vertexFunction = library.makeFunction(name: &quot;offscreenVertexShader&quot;)!
-descriptor.fragmentFunction = library.makeFunction(name: &quot;offscreenFragmentShader&quot;)!
-descriptor.colorAttachments[0].pixelFormat = offscreenTexture.pixelFormat
-offscreenPipeline = try! device.makeRenderPipelineState(descriptor: descriptor)
-</code></pre>
-<p>同样，通过 XXXDescriptor 来创建 XXX，Descriptor 相当于一个配置类，这里传入了渲染所需的着色器程序，同时指定了渲染结果的像素值排列方式，由于这里会将处理后的图片数据渲染到 Texture 中，所以保持与 Texture 的 pixelFormat 一致。</p>
-<h2 id="第五步，将图片渲染到-Offscreen-Texture-中"><a href="#第五步，将图片渲染到-Offscreen-Texture-中" class="headerlink" title="第五步，将图片渲染到 Offscreen Texture 中"></a>第五步，将图片渲染到 Offscreen Texture 中</h2><pre><code class="swift">let commandBuffer = commandQueue.makeCommandBuffer()!
-        
-let descriptor = MTLRenderPassDescriptor()
-descriptor.colorAttachments[0].texture = offscreenTexture
-descriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 0.1, 0, 1)
-descriptor.colorAttachments[0].storeAction = .store
-descriptor.colorAttachments[0].loadAction = .load
-let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: descriptor)!
-        
-let vertices = [
-    Vertex(position: vector_float2(x:-1, y: 1), coordinate: vector_float2(x: 0, y: 0)),
-    Vertex(position: vector_float2(x:-1, y:-1), coordinate: vector_float2(x: 0, y: 1)),
-    Vertex(position: vector_float2(x: 1, y:-1), coordinate: vector_float2(x: 1, y: 1)),
-    
-    Vertex(position: vector_float2(x:-1, y: 1), coordinate: vector_float2(x: 0, y: 0)),
-    Vertex(position: vector_float2(x: 1, y: 1), coordinate: vector_float2(x: 1, y: 0)),
-    Vertex(position: vector_float2(x: 1, y:-1), coordinate: vector_float2(x: 1, y: 1)),
-]
-        
-commandEncoder.setRenderPipelineState(offscreenPipeline)
-commandEncoder.setVertexBytes(vertices, length: MemoryLayout&lt;Vertex&gt;.size * 6, index: 0)
-commandEncoder.setFragmentTexture(imageTexture, index: 0)
-commandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6)
-commandEncoder.endEncoding()
-        
-commandBuffer.commit()
-commandBuffer.waitUntilCompleted()
-</code></pre>
-<p>比较容易理解，首先配置 RenderPass 的一些行为，RenderPass 可以理解为某个渲染指令序列。然后创建顶点数组，这里可以直接使用结构体，接着就是配置 Pipeline、定点数据、纹理数据、绘制指令等，最后将命令提交到 GPU 执行，执行完成后我们就已经有相应的灰度图数据了。</p>
-<h2 id="第六步，将-Offscreen-Texture-中保存的图片渲染到屏幕上。"><a href="#第六步，将-Offscreen-Texture-中保存的图片渲染到屏幕上。" class="headerlink" title="第六步，将 Offscreen Texture 中保存的图片渲染到屏幕上。"></a>第六步，将 Offscreen Texture 中保存的图片渲染到屏幕上。</h2><pre><code class="swift">func configOnscreenPipeline() -&gt; Void &#123;
-    let library = device.makeDefaultLibrary()!
-    let descriptor = MTLRenderPipelineDescriptor()
-    descriptor.vertexFunction = library.makeFunction(name: &quot;onscreenVertexShader&quot;)!
-    descriptor.fragmentFunction = library.makeFunction(name: &quot;onscreenFragmentShader&quot;)!
-    descriptor.colorAttachments[0].pixelFormat = mtkView.colorPixelFormat
-    onscreenPipeline = try! device.makeRenderPipelineState(descriptor: descriptor)
-&#125;
-    
-func mtkViewRender() -&gt; Void &#123;
-    let vertices = [
-        Vertex(position: vector_float2(x:-960, y: 540), coordinate: vector_float2(x: 0, y: 0)),
-        Vertex(position: vector_float2(x:-960, y:-540), coordinate: vector_float2(x: 0, y: 1)),
-        Vertex(position: vector_float2(x: 960, y:-540), coordinate: vector_float2(x: 1, y: 1)),
-            
-        Vertex(position: vector_float2(x:-960, y: 540), coordinate: vector_float2(x: 0, y: 0)),
-        Vertex(position: vector_float2(x: 960, y: 540), coordinate: vector_float2(x: 1, y: 0)),
-        Vertex(position: vector_float2(x: 960, y:-540), coordinate: vector_float2(x: 1, y: 1)),
-    ]
-        
-    let commandBuffer = commandQueue.makeCommandBuffer()!
-    let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: mtkView.currentRenderPassDescriptor!)!
-        
-    commandEncoder.setRenderPipelineState(onscreenPipeline)
-    commandEncoder.setViewport(MTLViewport(originX: 0, originY: 0, width: Double(viewport.x), height: Double(viewport.y), znear: 0, zfar: 1))
-    commandEncoder.setVertexBytes(vertices, length: MemoryLayout&lt;Vertex&gt;.size * 6, index: 0)
-    commandEncoder.setVertexBytes(&amp;viewport, length: MemoryLayout&lt;vector_float2&gt;.size, index: 1)
-    commandEncoder.setFragmentTexture(offscreenTexture, index: 0)
-    commandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6)
-    commandEncoder.endEncoding()
-        
-    commandBuffer.present(mtkView.currentDrawable!)
-    commandBuffer.commit()
-&#125;
-</code></pre>
-<p>将保存了灰度图数据的纹理渲染到屏幕上，具体可以参考<a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/metal/using_a_render_pipeline_to_render_primitives">苹果官方文档</a>，讲解的比较详细</p>
-<p>通过离屏渲染，可以现将图片进行处理，假如遮罩等等，由于 fragment 支持传入多个纹理，所以可以处理多个图层的情况，渲染的结果既可以通过 MTKView 等方式直接显示在屏幕上，也可以保存为图片文件，或者是其他的用途，可以进一步的挖掘一下。</p>
 
       
     </div>

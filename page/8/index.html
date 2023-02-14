@@ -139,7 +139,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -157,6 +157,105 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2018/10/23/%E6%94%B9%E5%96%84App%E6%80%A7%E8%83%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="黄瑞">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/10/23/%E6%94%B9%E5%96%84App%E6%80%A7%E8%83%BD/" class="post-title-link" itemprop="url">改善App性能</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2018-10-23 19:47:09 / Modified: 19:47:00" itemprop="dateCreated datePublished" datetime="2018-10-23T19:47:09+08:00">2018-10-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>通过</p>
+<ul>
+<li>搜集用户所遇到的问题的信息</li>
+<li>监测 App 的行为以找到问题的原因</li>
+<li>拟定并实现改进方案</li>
+<li>观察方案是否有效的解决了问题</li>
+</ul>
+<p>通过减少资源用量有一下好处</p>
+<ul>
+<li>减少 App 启动时间</li>
+<li>减少内存用量，可以加快应用从后台唤醒的用时</li>
+<li>减少磁盘 IO 可以提升 App 的综合性能</li>
+<li>减少等待时间与频率，从而提升用户体验</li>
+<li>减少电量消耗</li>
+</ul>
+<h2 id="获取-App-当前的性能信息"><a href="#获取-App-当前的性能信息" class="headerlink" title="获取 App 当前的性能信息"></a>获取 App 当前的性能信息</h2><ul>
+<li>使用 Xcode Organizer 可以获取启动时间、用户 UI 未响应，磁盘使用，内存使用和电量使用相关的信息，同时也可以获取到磁盘用量、崩溃信息和电量信息的诊断报告。</li>
+<li>使用 MetricKit 可以获取真实用户信息并将数据记录到你自己的工具中（类似于埋点）</li>
+<li>从 TestFlight 的反馈中获取</li>
+<li>问卷调查</li>
+</ul>
+<h2 id="确定一个最重要的方面进行改进"><a href="#确定一个最重要的方面进行改进" class="headerlink" title="确定一个最重要的方面进行改进"></a>确定一个最重要的方面进行改进</h2><p>这个往往需要结合 App 的类型进行决定，App 的用途不同，重点指标也不同，例如：一个音乐播放器由于需要在后台不断播放音乐，那么它的电量消耗相对于其他指标就没有那么重要。</p>
+<h2 id="监测-App"><a href="#监测-App" class="headerlink" title="监测 App"></a>监测 App</h2><p>可以使用 Instruments 提供的一系列工具</p>
+<ul>
+<li>Time Profiler，同来测量时间指标，例如应用未响应的情况</li>
+<li>Allocations 和 Leaks 用于监测内存用量</li>
+<li>Energy Log 用于监测电量用量</li>
+<li>File Activity 用于监测磁盘 IO</li>
+<li>Network template 用于监测网络</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1839,82 +1938,6 @@ $ /usr/bin/curl -f -L -o /var/folders/sw/lnv_fnsd3jn39d99prhj8hsw0000gn/T/d
 <pre><code class="swift">let storyBoard = UIStoryboard(name: &quot;Main&quot;, bundle: .main)
 let vc = storyBoard.instantiateViewController(withIdentifier:&quot;StoryboardVCPush&quot;)
 self.navigationController?.pushViewController(vc, animated: true)
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2016/11/12/%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B%E5%8C%96-App/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="黄瑞">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="黄瑞的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 黄瑞的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/11/12/%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B%E5%8C%96-App/" class="post-title-link" itemprop="url">使用代码初始化 App</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2016-11-12 21:12:13 / Modified: 21:12:00" itemprop="dateCreated datePublished" datetime="2016-11-12T21:12:13+08:00">2016-11-12</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>使用代码初始化App<br>打开 AppDelegate.m，如果没有 window 属性，则手动添加一个，并在 didFinishLaunch 方法中加入如下代码</p>
-<pre><code class="swift">let window = UIWindow(frame: UIScreen.main.bounds)
-window.backgroundColor = .white
-window.rootViewController = UINavigationController(rootViewController: ViewController())
-window.makeKeyAndVisible()
-return true
 </code></pre>
 
       

@@ -139,7 +139,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -157,6 +157,113 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="黄瑞">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">iOS实现高斯模糊效果背景遮罩的方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-02-14 22:23:31 / Modified: 22:26:18" itemprop="dateCreated datePublished" datetime="2023-02-14T22:23:31+08:00">2023-02-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol>
+<li>使用原声的 UIEffectView 及 UIBlurEffect，优点是代码简单，缺点是自定义性较差，只有系统提供的几种固定效果，可能不满足设计需求，代码与效果如下</li>
+</ol>
+<pre><code class="swift">let effect_view = UIVisualEffectView(frame: self.view.bounds)
+effect_view.effect = UIBlurEffect(style: .light)
+self.view.addSubview(effect_view)
+</code></pre>
+<p><img src="/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/1.png"></p>
+<ol start="2">
+<li>先将所需模糊的背景进行截图，一般截取整个屏幕，然后使用 CIFilter 进行高斯模糊，随后伪装成背景盖在原来的界面上即可，优点是模糊度可以自定义，缺点是由于是由于是假背景，不像原生那样是带透明度的，所以背景的一变化无法显示出来。代码与效果如下</li>
+</ol>
+<pre><code class="swift">/// 截屏
+func screen_shot() -&gt; UIImage? &#123;
+    guard let window = (UIApplication.shared.delegate as? AppDelegate)?.window else &#123; return nil &#125;
+    UIGraphicsBeginImageContextWithOptions(UIScreen.main.bounds.size, false, UIScreen.main.scale)
+    
+    guard let context = UIGraphicsGetCurrentContext() else &#123; return nil &#125;
+    window.layer.render(in: context)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return image
+&#125;
+
+/// 模糊处理
+func blur_image(image: UIImage) -&gt; UIImage? &#123;
+    let context = CIContext(options: nil)
+    guard let ciImage = CIImage(image: image) else &#123; return nil &#125;
+    guard let filter = CIFilter(name: &quot;CIGaussianBlur&quot;) else &#123; return nil &#125;
+    filter.setValue(ciImage, forKey: kCIInputImageKey)
+    // 设置模糊程度
+    filter.setValue(NSNumber(floatLiteral: 10), forKey: &quot;inputRadius&quot;)
+    guard let result = filter.value(forKey: kCIOutputImageKey) as? CIImage else &#123; return nil &#125;
+    guard let outImage = context.createCGImage(result, from: ciImage.extent) else &#123; return nil &#125;
+    let blurImage = UIImage(cgImage: outImage)
+    return blurImage
+&#125;
+</code></pre>
+<p><img src="/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/2.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1095,77 +1202,6 @@ Accept-Ranges: bytes
 <p>可以使用<br><img src="/2022/11/02/%E5%9B%BE%E7%89%87resize%E5%AF%BC%E8%87%B4%E5%88%86%E8%BE%A8%E7%8E%87%E5%8F%98%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/1.jpg"></p>
 <p>或<br><img src="/2022/11/02/%E5%9B%BE%E7%89%87resize%E5%AF%BC%E8%87%B4%E5%88%86%E8%BE%A8%E7%8E%87%E5%8F%98%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/2.jpg"></p>
 <p>这两种方式来进行尺寸修改，推荐使用第一种，因为它处理尺寸的同时也处理了 bitmap 的格式，可以看到文档中已经进行了说明<br>&#x2F;&#x2F; The following methods will only return a 8-bit per channel context in the DeviceRGB color space.<br>&#x2F;&#x2F; Any new bitmap drawing code is encouraged to use UIGraphicsImageRenderer in lieu of this API.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2022/10/28/Metal-%E7%94%BB%E6%9D%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="黄瑞">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="黄瑞的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 黄瑞的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/10/28/Metal-%E7%94%BB%E6%9D%BF/" class="post-title-link" itemprop="url">Metal 画板</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-10-28 21:33:07 / Modified: 21:33:00" itemprop="dateCreated datePublished" datetime="2022-10-28T21:33:07+08:00">2022-10-28</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Metal 版画板已完成<br>原理比较简单，难点主要在于笔刷尺寸的计算以及缩放平移旋转的计算</p>
-<p><img src="/2022/10/28/Metal-%E7%94%BB%E6%9D%BF/1.zip" alt="项目文件"></p>
 
       
     </div>
