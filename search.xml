@@ -3226,7 +3226,7 @@ class _SlidingGradientTransform extends GradientTransform &#123;
 effect_view.effect = UIBlurEffect(style: .light)
 self.view.addSubview(effect_view)
 </code></pre>
-<p><img src="/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/1.png"></p>
+<p><img src="/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/1.jpg"></p>
 <ol start="2">
 <li>先将所需模糊的背景进行截图，一般截取整个屏幕，然后使用 CIFilter 进行高斯模糊，随后伪装成背景盖在原来的界面上即可，优点是模糊度可以自定义，缺点是由于是由于是假背景，不像原生那样是带透明度的，所以背景的一变化无法显示出来。代码与效果如下</li>
 </ol>
@@ -3256,7 +3256,7 @@ func blur_image(image: UIImage) -&gt; UIImage? &#123;
     return blurImage
 &#125;
 </code></pre>
-<p><img src="/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/2.png"></p>
+<p><img src="/2023/02/14/iOS%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF%E9%81%AE%E7%BD%A9%E7%9A%84%E6%96%B9%E6%B3%95/2.jpg"></p>
 ]]></content>
   </entry>
   <entry>

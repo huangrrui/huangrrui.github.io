@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com.cn","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="http://example.com.cn/2021/10/28/flutter%E4%B8%AD%E7%9A%84key/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"http://example.com.cn/2021/10/28/flutter%E4%B8%AD%E7%9A%84key/","path":"2021/10/28/flutter中的key/","title":"flutter中的key"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>flutter中的key | 黄瑞的博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">黄瑞的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黄瑞"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">黄瑞</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com.cn/2021/10/28/flutter%E4%B8%AD%E7%9A%84key/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="黄瑞">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="flutter中的key | 黄瑞的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          flutter中的key
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-10-28 19:02:20 / Modified: 19:02:00" itemprop="dateCreated datePublished" datetime="2021-10-28T19:02:20+08:00">2021-10-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>首先 fluttrer 里有很多种类的 key，但是基本可以分为两种：Local Key 和 Global Key</p>
+<p>所有不是 GlobalKey 的都属于 LocalKey，例如 Key，ValueKey，UniqueKey，ObjectKey 等等，它们都属于 LocalKey。</p>
+<p>key 的作用有很多，对于 GlobalKey，顾名思义，它相对于 Widget Tree 是全局的，这意味着，通过它我们在 Widget Tree 的任意位置访问持有它的 StatefulWidget 的 State 对象，</p>
+<p>key 还有一个关键作用，用来标记 Widget、Element 和 SemanticsNode。</p>
+<ol>
+<li>我们知道 Flutter 中有两棵树，一棵是 Widget Tree，一棵是依照 Widget Tree 生成的对应的 Element Tree。</li>
+<li>我们还知道 Widget 相当于一个“蓝图”，系统会将其“填充”成为一个最终显示的 Element</li>
+</ol>
+<p>举一个简单的例子，如下图所示，<br><img src="/2021/10/28/flutter%E4%B8%AD%E7%9A%84key/1.jpg"></p>
+<p>系统通过左边的 Widget Tree 生成了右边对应的 Element Tree，它里面就包含了实际应该显示的数据。假设现在我有一个列表，里面有很多相同类型的 Widget，用来显示颜色，我想将第一项和第二项换一下位置，会出现什么样子的状况呢。 </p>
+<p>状况就是颜色并没有发生改变。<br><img src="/2021/10/28/flutter%E4%B8%AD%E7%9A%84key/2.jpg"></p>
+<p>因为列表项是同一种 widget，系统发现新的 Widget Tree没有发生变化，而且 Element Tree 中的元素也能够一一对应，所以它不会更新UI，这个时候就需要 key 来帮忙了。<br><img src="/2021/10/28/flutter%E4%B8%AD%E7%9A%84key/3.jpg"></p>
+<p>我们给对应的列表项添加一个 UniqueKey()，如图所示，接着再进行调换位置。<br><img src="/2021/10/28/flutter%E4%B8%AD%E7%9A%84key/4.jpg"></p>
+<p>这个时候系统发现 Widget Tree 和 Elment Tree 没法一一对应了，但是仍然能够找到与其匹配的 Element，所以系统将 Element Tree 中的红色和黑色列表项调换了位置，于是 UI 发生了改变，成功地切换了颜色。</p>
+<p>代码如下</p>
+<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
+
+class ListViewDemoPage extends StatefulWidget &#123;
+  static String rName = &#39;ListViewDemoPage&#39;;
+  const ListViewDemoPage(&#123;Key? key&#125;) : super(key: key);
+
+  @override
+  _ListViewDemoPageState createState() =&gt; _ListViewDemoPageState();
+&#125;
+
+class _ListViewDemoPageState extends State&lt;ListViewDemoPage&gt; &#123;
+  List&lt;Color&gt; colors = [
+    Colors.red,
+    Colors.green,
+  ];
+
+  @override
+  Widget build(BuildContext context) &#123;
+    return Scaffold(
+      appBar: _buildAppBar(),
+      body: _buildBody(),
+      floatingActionButton: _buildFloatingButton(),
+    );
+  &#125;
+
+  PreferredSizeWidget _buildAppBar() &#123;
+    return AppBar(title: Text(&#39;List View Demo&#39;));
+  &#125;
+
+  /// todo - 打开注释就可以成功切换颜色额
+  Widget _buildBody() &#123;
+    return ListView(
+      itemExtent: 66,
+      children: [
+        ListCell(
+          color: colors[0],
+          // key: UniqueKey(),
+        ),
+        ListCell(
+          color: colors[1],
+          // key: UniqueKey(),
+        ),
+      ],
+    );
+  &#125;
+
+  Widget _buildFloatingButton() &#123;
+    return FloatingActionButton(
+      onPressed: () &#123;
+        setState(() &#123;
+          final color = colors.removeLast();
+          colors.insert(0, color);
+          setState(() &#123;&#125;);
+        &#125;);
+      &#125;,
+      child: Icon(Icons.add),
+    );
+  &#125;
+&#125;
+
+class ListCell extends StatefulWidget &#123;
+  const ListCell(&#123;
+    required this.color,
+    Key? key,
+  &#125;) : super(key: key);
+
+  final Color color;
+
+  @override
+  _ListCellState createState() &#123;
+    return _ListCellState(color);
+  &#125;
+&#125;
+
+class _ListCellState extends State&lt;ListCell&gt; &#123;
+  _ListCellState(this.color);
+  Color color;
+
+  @override
+  Widget build(BuildContext context) &#123;
+    return Container(
+      margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
+      color: color,
+    );
+  &#125;
+&#125;
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/26/flutter%E5%88%97%E8%A1%A8%E6%94%BE%E5%A4%A7%E6%95%88%E6%9E%9C/" rel="prev" title="flutter列表放大效果">
+                  <i class="fa fa-chevron-left"></i> flutter列表放大效果
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/11/01/flutter%E2%80%9C%E8%A7%86%E5%B7%AE%E2%80%9D%E5%88%97%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" rel="next" title="flutter“视差”列表的实现方式">
+                  flutter“视差”列表的实现方式 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄瑞</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
